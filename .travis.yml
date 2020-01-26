@@ -6,5 +6,5 @@ services:
   - docker
 
 after_success:
-  - docker build -t gracious_banzai .
-  - docker run gracious_banzai
+  - docker build -t set08103_cwk_dockerfile .
+  - docker run set08103_cwk_dockerfile
