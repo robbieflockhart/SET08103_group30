@@ -1,4 +1,4 @@
 FROM openjdk:latest
-COPY ./target/classes /tmp
+COPY ./target/SET08103_CWK-0.1.0.1-jar-with-dependencies.jar /tmp
 WORKDIR /tmp
-ENTRYPOINT ["java", "set08103_cwk.Main"]
+ENTRYPOINT ["java", "-jar", "SET08103_CWK-0.1.0.1-jar-with-dependencies.jar"]
