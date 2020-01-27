@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="df4ac656-1db9-4427-93d8-9ed445b679c8" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/SET08103_group30.iml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -11,6 +10,11 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="Robert Ewing &lt;40344772@live.napier.ac.uk&gt;" />
+      </list>
+    </option>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
         <entry key="$PROJECT_DIR$" value="develop" />
@@ -104,16 +108,39 @@
       <workItem from="1580130409287" duration="284000" />
       <workItem from="1580132737345" duration="311000" />
     </task>
+    <task id="LOCAL-00001" summary="Includes code of conduct and backlog as md">
+      <created>1580155658028</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1580155658028</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Includes code of conduct and backlog as md">
+      <created>1580155673260</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1580155673260</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Includes code of conduct and backlog as md" />
+    <option name="LAST_COMMIT_MESSAGE" value="Includes code of conduct and backlog as md" />
+  </component>
   <component name="WindowStateProjectService">
-    <state x="301" y="23" width="838" height="793" key="CommitChangelistDialog2" timestamp="1580155657754">
+    <state x="301" y="23" width="838" height="793" key="CommitChangelistDialog2" timestamp="1580155673106">
       <screen x="0" y="23" width="1440" height="793" />
     </state>
-    <state x="301" y="23" width="838" height="793" key="CommitChangelistDialog2/0.23.1440.793@0.23.1440.793" timestamp="1580155657754" />
+    <state x="301" y="23" width="838" height="793" key="CommitChangelistDialog2/0.23.1440.793@0.23.1440.793" timestamp="1580155673106" />
+    <state x="320" y="163" key="Vcs.Push.Dialog.v2" timestamp="1580155720975">
+      <screen x="0" y="23" width="1440" height="793" />
+    </state>
+    <state x="320" y="163" key="Vcs.Push.Dialog.v2/0.23.1440.793@0.23.1440.793" timestamp="1580155720975" />
     <state x="466" y="143" key="git4idea.branch.GitSmartOperationDialog" timestamp="1580133104296">
       <screen x="0" y="23" width="1440" height="793" />
     </state>
