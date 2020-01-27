@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="df4ac656-1db9-4427-93d8-9ed445b679c8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,12 +84,7 @@
       <list>
         <serviceView>
           <treeState>
-            <expand>
-              <path>
-                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-                <item name="Docker" type="9fbbdea:ServiceModel$ServiceNode" />
-              </path>
-            </expand>
+            <expand />
             <select />
           </treeState>
         </serviceView>
@@ -118,5 +114,9 @@
       <screen x="0" y="23" width="1440" height="793" />
     </state>
     <state x="466" y="143" key="git4idea.branch.GitSmartOperationDialog/0.23.1440.793@0.23.1440.793" timestamp="1580133104296" />
+    <state x="364" y="221" key="git4idea.merge.GitPullDialog" timestamp="1580133915336">
+      <screen x="0" y="23" width="1440" height="793" />
+    </state>
+    <state x="364" y="221" key="git4idea.merge.GitPullDialog/0.23.1440.793@0.23.1440.793" timestamp="1580133915336" />
   </component>
 </project>
