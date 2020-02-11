@@ -1,0 +1,288 @@
+Use Case
+
+1. A user wants to view all the countries in the world
+The user sits down at their computer
+The user turns on the computer
+The user logs in to their computer
+The user opens the application
+The user selects a button on screen that displays all the countries in an area
+The user selects World from a list when prompted
+
+2. A user wants to view all the countries in Europe
+The user sits down at their computer
+The user turns on the computer
+The user logs in to their computer
+The user opens the application
+The user selects a button on screen that displays all the countries in an area
+The user selects Continent form a list when prompted
+The user selects the continent Europe from another list when prompted
+
+3. A user wants to view all the countries in Oceania
+The user sits down at their computer
+The user turns on the computer
+The user logs in to their computer
+The user opens the application
+The user selects a button on screen that displays all the countries in an area
+The user selects Region form a list when prompted
+The user selects Oceania from another list when prompted
+
+4. A user wants to find the top 7 populated countries in the world
+The user sits down at their computer
+The user turns on the computer
+The user logs in to their computer
+The user opens the application
+The user selects a button on screen that displays the top N populated countries in an area
+The user selects World from a list when prompted 
+The user types in the number 7 when prompted
+
+5. A user wants to find the top 7 populated countries in Europe
+The user sits down at their computer
+The user turns on the computer
+The user logs in to their computer
+The user opens the application
+The user selects a button on screen that displays the top N populated countries in an area
+The user selects Continent from a list when prompted
+The user selects Europe from another list when prompted 
+The user types in the number 7 when prompted
+
+6. A user wants to find the top 7 populated countries in Oceania
+The user sits down at their computer
+The user turns on the computer
+The user logs in to their computer
+The user opens the application
+The user selects a button on screen that displays the top N populated countries in an area
+The user selects Region from a list when prompted
+The user selects Oceania from another list when prompted 
+The user types in the number 7 when prompted
+
+7. A user wants to view all the cities in the world
+The user sits down at their computer
+The user turns on the computer
+The user logs in to their computer
+The user opens the application
+The user selects a button on screen that displays all the cities in an area
+The user selects World form a list when prompted
+
+8. A user wants to view all the cities in Europe
+The user sits down at their computer
+The user turns on the computer
+The user logs in to their computer
+The user opens the application
+The user selects a button on screen that displays all the cities in an area
+The user selects Continent form a list when prompted
+The user selects Europe from another list when prompted
+
+9. A user wants to view all the cities in Oceania
+The user sits down at their computer
+The user turns on the computer
+The user logs in to their computer
+The user opens the application
+The user selects a button on screen that displays all the cities in an area
+The user selects Region form a list when prompted
+The user selects Oceania from another list when prompted
+
+10. A user wants to view all the cities in Scotland
+The user sits down at their computer
+The user turns on the computer
+The user logs in to their computer
+The user opens the application
+The user selects a button on screen that displays all the cities in an area
+The user selects Country form a list when prompted
+The user selects Scotland from another list when prompted
+
+11. A user wants to view all the cities in Renfrewshire
+The user sits down at their computer
+The user turns on the computer
+The user logs in to their computer
+The user opens the application
+The user selects a button on screen that displays all the cities in an area
+The user selects County form a list when prompted
+The user selects Renfrewshire from another list when prompted
+
+12. A user wants to find the top 5 populated cities in the world
+The user sits down at their computer
+The user turns on the computer
+The user logs in to their computer
+The user opens the application
+The user selects a button on screen that displays the top N populated cities in an area
+The user selects World from a list when prompted 
+The user types in the number 5 when prompted
+
+13. A user wants to find the top 5 populated cities in Europe
+The user sits down at their computer
+The user turns on the computer
+The user logs in to their computer
+The user opens the application
+The user selects a button on screen that displays the top N populated cities in an area
+The user selects Continent from a list when prompted 
+The user selects Europe from another list when prompted
+The user types in the number 5 when prompted
+
+14. A user wants to find the top 5 populated cities in Oceania
+The user sits down at their computer
+The user turns on the computer
+The user logs in to their computer
+The user opens the application
+The user selects a button on screen that displays the top N populated cities in an area
+The user selects Region from a list when prompted 
+The user selects Oceania from another list when prompted
+The user types in the number 5 when prompted
+
+15. A user wants to find the top 5 populated cities in Scotland
+The user sits down at their computer
+The user turns on the computer
+The user logs in to their computer
+The user opens the application
+The user selects a button on screen that displays the top N populated cities in an area
+The user selects Country from a list when prompted 
+The user selects Scotland from another list when prompted
+The user types in the number 5 when prompted
+
+16. A user wants to find the top 5 populated cities in Renfrewshire
+The user sits down at their computer
+The user turns on the computer
+The user logs in to their computer
+The user opens the application
+The user selects a button on screen that displays the top N populated cities in an area
+The user selects County from a list when prompted 
+The user selects Renfrewshire from another list when prompted
+The user types in the number 5 when prompted
+
+17. A user wants to view all the capital cities in the world
+The user sits down at their computer
+The user turns on the computer
+The user logs in to their computer
+The user opens the application
+The user selects a button on screen that displays all the capital cities in an area
+The user selects World from a list when prompted 
+
+18. A user wants to view all the capital cities in Europe
+The user sits down at their computer
+The user turns on the computer
+The user logs in to their computer
+The user opens the application
+The user selects a button on screen that displays all the capital cities in an area
+The user selects Continent from a list when prompted 
+The user selects Europe from another list when prompted
+
+19. A user wants to view all the capital cities in Oceania
+The user sits down at their computer
+The user turns on the computer
+The user logs in to their computer
+The user opens the application
+The user selects a button on screen that displays all the capital cities in an area
+The user selects Region from a list when prompted 
+The user selects Oceania from another list when prompted
+
+20. A user wants to find the top 3 populated capital cities in the world
+The user sits down at their computer
+The user turns on the computer
+The user logs in to their computer
+The user opens the application
+The user selects a button on screen that displays the top N populated capital cities in an area
+The user selects World from a list when prompted 
+The user types in the number 3 when prompted
+
+21. A user wants to find the top 3 populated capital cities in Europe
+The user sits down at their computer
+The user turns on the computer
+The user logs in to their computer
+The user opens the application
+The user selects a button on screen that displays the top N populated capital cities in an area
+The user selects Continent from a list when prompted 
+The user selects Europe from another list when prompted
+The user types in the number 3 when prompted
+
+22. A user wants to find the top 3 populated capital cities in Oceania
+The user sits down at their computer
+The user turns on the computer
+The user logs in to their computer
+The user opens the application
+The user selects a button on screen that displays the top N populated capital cities in an area
+The user selects Region from a list when prompted 
+The user selects Oceania from another list when prompted
+The user types in the number 3 when prompted
+
+23. A user wants to view the population of people living in cities and people not living in cities in each continent
+The user sits down at their computer
+The user turns on the computer
+The user logs in to their computer
+The user opens the application
+The user selects a button on screen that displays the number of people living in cities and the not living in cities in an area
+The user selects Continent from a list when prompted
+
+24. A user wants to view the population of people living in cities and people not living in cities in each region
+The user sits down at their computer
+The user turns on the computer
+The user logs in to their computer
+The user opens the application
+The user selects a button on screen that displays the number of people living in cities and the not living in cities in an area
+The user selects Region from a list when prompted
+
+25. A user wants to view the population of people living in cities and people not living in cities in each country
+The user sits down at their computer
+The user turns on the computer
+The user logs in to their computer
+The user opens the application
+The user selects a button on screen that displays the number of people living in cities and the not living in cities in an area
+The user selects Country from a list when prompted
+
+26. A user wants to view the population of the world
+The user sits down at their computer
+The user turns on the computer
+The user logs in to their computer
+The user opens the application
+The user selects a button on screen that displays the population of an area
+The user selects World from a list when prompted
+
+27. A user wants to view the population of Europe
+The user sits down at their computer
+The user turns on the computer
+The user logs in to their computer
+The user opens the application
+The user selects a button on screen that displays the population of an area
+The user selects Continent from a list when prompted
+The user selects Europe from another list when prompted
+
+28. A user wants to view the population of Oceania
+The user sits down at their computer
+The user turns on the computer
+The user logs in to their computer
+The user opens the application
+The user selects a button on screen that displays the population of an area
+The user selects Region from a list when prompted
+The user selects Oceania from another list when prompted
+
+29. A user wants to view the population of Scotland
+The user sits down at their computer
+The user turns on the computer
+The user logs in to their computer
+The user opens the application
+The user selects a button on screen that displays the population of an area
+The user selects Country from a list when prompted
+The user selects Scotland from another list when prompted
+
+30. A user wants to view the population of Renfrewshire
+The user sits down at their computer
+The user turns on the computer
+The user logs in to their computer
+The user opens the application
+The user selects a button on screen that displays the population of an area
+The user selects County from a list when prompted
+The user selects Renfrewshire from another list when prompted
+
+31. A user wants to view the population of Glasgow
+The user sits down at their computer
+The user turns on the computer
+The user logs in to their computer
+The user opens the application
+The user selects a button on screen that displays the population of an area
+The user selects City from a list when prompted
+The user selects Glasgow from another list when prompted
+
+32. A user wants to know how many people speak - Chinese, English, Hindi, Spanish and Arabic
+The user sits down at their computer
+The user turns on the computer
+The user logs in to their computer
+The user opens the application
+The user selects a button on screen that displays the number of people who speak Chinese, English, Hindi, Spanish and Arabic
