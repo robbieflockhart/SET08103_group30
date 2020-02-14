@@ -89,18 +89,19 @@ public class Application
             // Create an SQL statement
             Statement stmt = con.createStatement();
             // Create string for SQL statement
-            String strSelect =
-                    "SELECT Name "
-                            + "FROM country "
-                            + "WHERE Name LIKE 'Spa%' ";
+
             // Execute SQL statement
-            ResultSet rset = stmt.executeQuery(strSelect);
+            ResultSet rset = stmt.executeQuery("SELECT Name + Population "
+                    + "FROM country "
+                    + "ORDER BY Population ASC ");
+
             // Return new employee if valid.
             // Check one is returned
             if (rset.next())
             {
                 Country country = new Country();
                 country.name = rset.getString("name");
+                country.population = rset.getInt("population");
                 return country;
             }
             else
