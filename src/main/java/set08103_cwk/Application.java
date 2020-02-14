@@ -12,6 +12,8 @@ public class Application
         // Connect to database
         a.connect();
 
+        Country country = a.getCountry();
+        a.displayCountry(country);
         // Disconnect from database
         a.disconnect();
     }
@@ -80,4 +82,43 @@ public class Application
         }
     }
 
+    public Country getCountry()
+    {
+        try
+        {
+            // Create an SQL statement
+            Statement stmt = con.createStatement();
+            // Create string for SQL statement
+            String strSelect =
+                    "SELECT Name "
+                            + "FROM country "
+                            + "WHERE Name LIKE 'Spa%' ";
+            // Execute SQL statement
+            ResultSet rset = stmt.executeQuery(strSelect);
+            // Return new employee if valid.
+            // Check one is returned
+            if (rset.next())
+            {
+                Country country = new Country();
+                country.name = rset.getString("name");
+                return country;
+            }
+            else
+                return null;
+        }
+        catch (Exception e)
+        {
+            System.out.println(e.getMessage());
+            System.out.println("Failed to get employee details");
+            return null;
+        }
+    }
+    public void displayCountry(Country country)
+    {
+        if (country != null)
+        {
+            System.out.println(
+                    country.name + " ");
+        }
+    }
 }
