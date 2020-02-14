@@ -20,7 +20,7 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>set08103_cwk.Main</mainClass>
+                            <mainClass>set08103_cwk.Application</mainClass>
                         </manifest>
                     </archive>
                     <descriptorRefs>
