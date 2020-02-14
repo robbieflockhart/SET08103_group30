@@ -6,5 +6,4 @@ services:
   - docker
 
 after_success:
-  - docker build -t set08103_cwk .
-  - docker run set08103_cwk
+  - docker-compose up --abort-on-container-exit
