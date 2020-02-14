@@ -119,7 +119,7 @@ public class Application
         if (country != null)
         {
             System.out.println(
-                    country.name + " ");
+                    country.name + " " + country.population);
         }
     }
 }
