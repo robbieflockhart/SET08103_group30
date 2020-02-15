@@ -91,7 +91,7 @@ public class Application
             // Create string for SQL statement
 
             // Execute SQL statement
-            ResultSet rset = stmt.executeQuery("SELECT Name + Population "
+            ResultSet rset = stmt.executeQuery("SELECT Name"
                     + "FROM country "
                     + "ORDER BY Population ASC ");
 
