@@ -116,9 +116,13 @@ public class Application
     }
     public void displayCountry(ArrayList country)
     {
+
+        String output = "";
         for(int i = 0; i < country.size(); i++)
         {
-            System.out.println(country.get(i));
+            output += country.get(i) + "\n";
         }
+
+        System.out.println(output);
     }
 }
