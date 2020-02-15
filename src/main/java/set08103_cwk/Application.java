@@ -92,7 +92,11 @@ public class Application
             // Create string for SQL statement
 
             ArrayList<String> output = new ArrayList<String>();
-            String strSelect = "SELECT Name" + "FROM country" + "ORDER BY Population ASC ";
+
+            String strSelect =
+                    "SELECT Name , Population "
+                            + "FROM country "
+                            + "ORDER BY Population ASC ";
             // Execute SQL statement
             ResultSet rset = stmt.executeQuery(strSelect);
 
