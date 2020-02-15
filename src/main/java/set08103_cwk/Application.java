@@ -1,6 +1,7 @@
 package set08103_cwk;
 
 import java.sql.*;
+import java.util.ArrayList;
 
 public class Application
 {
@@ -12,7 +13,7 @@ public class Application
         // Connect to database
         a.connect();
 
-        Country country = a.getCountry();
+        ArrayList<String> country = a.getCountry();
         a.displayCountry(country);
         // Disconnect from database
         a.disconnect();
@@ -82,7 +83,7 @@ public class Application
         }
     }
 
-    public Country getCountry()
+    public ArrayList<String> getCountry()
     {
         try
         {
@@ -90,22 +91,17 @@ public class Application
             Statement stmt = con.createStatement();
             // Create string for SQL statement
 
+            ArrayList<String> output = new ArrayList<String>();
+            String strSelect = "SELECT Name" + "FROM country" + "ORDER BY Population ASC ";
             // Execute SQL statement
-            ResultSet rset = stmt.executeQuery("SELECT Name"
-                    + "FROM country "
-                    + "ORDER BY Population ASC ");
+            ResultSet rset = stmt.executeQuery(strSelect);
 
             // Return new employee if valid.
             // Check one is returned
-            if (rset.next())
-            {
-                Country country = new Country();
-                country.name = rset.getString("name");
-                country.population = rset.getInt("population");
-                return country;
+            while (rset.next()) {
+                output.add(rset.toString());
             }
-            else
-                return null;
+            return output;
         }
         catch (Exception e)
         {
@@ -114,12 +110,11 @@ public class Application
             return null;
         }
     }
-    public void displayCountry(Country country)
+    public void displayCountry(ArrayList country)
     {
-        if (country != null)
+        for(int i = 0; i < country.size(); i++)
         {
-            System.out.println(
-                    country.name + " " + country.population);
+            System.out.println(country.get(i));
         }
     }
 }
