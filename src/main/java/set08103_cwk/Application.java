@@ -15,8 +15,10 @@ public class Application
         // Connect to database
         a.connect();
 
+        //runs function to get the countries in population order
         ArrayList<String> country = a.getCountry();
 
+        //runs function to get the countries in a specific continent, population order
         ArrayList<String> contAsia = a.getContAsia();
 
         ArrayList<String> contAfrica = a.getContAfrica();
@@ -31,9 +33,12 @@ public class Application
 
         ArrayList<String> contAnt = a.getContAnt();
 
+        //Displays the countries
         a.displayCountry(country);
 
         System.out.println("Issue 2");
+
+        //Displays the continent countries
         a.displayCountry(contAsia);
         a.displayCountry(contAfrica);
         a.displayCountry(contNA);
@@ -41,6 +46,7 @@ public class Application
         a.displayCountry(contEurope);
         a.displayCountry(contOc);
         a.displayCountry(contAnt);
+
         // Disconnect from database
         a.disconnect();
     }
@@ -115,19 +121,19 @@ public class Application
         {
             // Create an SQL statement
             Statement stmt = con.createStatement();
-            // Create string for SQL statement
 
+            //creates an array list to store the data
             ArrayList<String> output = new ArrayList<String>();
 
             String strSelect =
                     "SELECT Name, Population, Code, Continent, Region, Capital "
                             + "FROM country "
                             + "ORDER BY Population DESC ";
+
             // Execute SQL statement
             ResultSet rset = stmt.executeQuery(strSelect);
 
-            // Return new employee if valid.
-            // Check one is returned
+
             while (rset.next()) {
                 Country country =  new Country();
                 country.code = rset.getString("Code");
@@ -137,11 +143,14 @@ public class Application
                 country.population = rset.getInt("Population");
                 country.capital = rset.getString("Capital");
 
+                //stores the results into a string
                 String store = country.code + " " + country.name + " " + country.continent + " " + country.region + " "
                         + country.population + " " + country.capital;
 
+                //stores it into an array list
                 output.add(store);
             }
+            //returns the array list
             return output;
         }
         catch (Exception e)
@@ -157,8 +166,8 @@ public class Application
         try {
             // Create an SQL statement
             Statement stmt = con.createStatement();
-            // Create string for SQL statement
 
+            //creates an array list to store the data
             ArrayList<String> output = new ArrayList<String>();
 
             String strSelect =
@@ -169,8 +178,7 @@ public class Application
             // Execute SQL statement
             ResultSet rset = stmt.executeQuery(strSelect);
 
-            // Return new employee if valid.
-            // Check one is returned
+
             while (rset.next()) {
                 Country country = new Country();
                 country.code = rset.getString("Code");
@@ -180,11 +188,14 @@ public class Application
                 country.population = rset.getInt("Population");
                 country.capital = rset.getString("Capital");
 
+                //stores the results into a string
                 String store = country.code + " " + country.name + " " + country.continent + " " + country.region + " "
                         + country.population + " " + country.capital;
 
+                //stores it into an array list
                 output.add(store);
             }
+            //returns the array list
             return output;
         }
         catch (Exception e)
@@ -227,8 +238,10 @@ public class Application
                 String store = country.code + " " + country.name + " " + country.continent + " " + country.region + " "
                         + country.population + " " + country.capital;
 
+                //stores it into an array list
                 output.add(store);
             }
+            //returns the array list
             return output;
         }
         catch (Exception e)
@@ -271,8 +284,10 @@ public class Application
                 String store = country.code + " " + country.name + " " + country.continent + " " + country.region + " "
                         + country.population + " " + country.capital;
 
+                //stores it into an array list
                 output.add(store);
             }
+            //returns the array list
             return output;
         }
         catch (Exception e)
@@ -315,8 +330,10 @@ public class Application
                 String store = country.code + " " + country.name + " " + country.continent + " " + country.region + " "
                         + country.population + " " + country.capital;
 
+                //stores it into an array list
                 output.add(store);
             }
+            //returns the array list
             return output;
         }
         catch (Exception e)
@@ -344,8 +361,6 @@ public class Application
             // Execute SQL statement
             ResultSet rset = stmt.executeQuery(strSelect);
 
-            // Return new employee if valid.
-            // Check one is returned
             while (rset.next()) {
                 Country country = new Country();
                 country.code = rset.getString("Code");
@@ -358,8 +373,10 @@ public class Application
                 String store = country.code + " " + country.name + " " + country.continent + " " + country.region + " "
                         + country.population + " " + country.capital;
 
+                //stores it into an array list
                 output.add(store);
             }
+            //returns the array list
             return output;
         }
         catch (Exception e)
@@ -402,8 +419,10 @@ public class Application
                 String store = country.code + " " + country.name + " " + country.continent + " " + country.region + " "
                         + country.population + " " + country.capital;
 
+                //stores it into an array list
                 output.add(store);
             }
+            //returns the array list
             return output;
         }
         catch (Exception e)
@@ -446,8 +465,10 @@ public class Application
                 String store = country.code + " " + country.name + " " + country.continent + " " + country.region + " "
                         + country.population + " " + country.capital;
 
+                //stores it into an array list
                 output.add(store);
             }
+            //returns the array list
             return output;
         }
         catch (Exception e)
