@@ -1,4 +1,7 @@
-//This is the main application
+// MAIN APPLICATION
+// SOFTWARE ENGINEERING METHODS GROUP ASSESSMENT
+// GROUP 30
+// Edinburgh Napier University, Session 2019/20, Semester 2.
 
 package set08103_cwk;
 
@@ -16,38 +19,74 @@ public class Application
         a.connect();
 
         //runs function to get the countries in population order
-        ArrayList<String> country = a.getCountry();
+        ArrayList<Country> country = a.getCountry();
 
-        //runs function to get the countries in a specific continent, population order
-        ArrayList<String> contAsia = a.getContAsia();
+        //Creates an Array List to store the countries, and then calls the function ...
+        // to populate the ArrayList, running in population order.
+        ArrayList<Country> contAsia = a.getContAsia();
 
-        ArrayList<String> contAfrica = a.getContAfrica();
+        ArrayList<Country> contAfrica = a.getContAfrica();
 
-        ArrayList<String> contNA = a.getContNorthAmerica();
+        ArrayList<Country> contNA = a.getContNorthAmerica();
 
-        ArrayList<String> contSA = a.getContSouthAmerica();
+        ArrayList<Country> contSA = a.getContSouthAmerica();
 
-        ArrayList<String> contEurope = a.getContEurope();
+        ArrayList<Country> contEurope = a.getContEurope();
 
-        ArrayList<String> contOc = a.getContOcean();
+        ArrayList<Country> contOc = a.getContOcean();
 
-        ArrayList<String> contAnt = a.getContAnt();
+        ArrayList<Country> contAnt = a.getContAnt();
 
         //Displays the countries
+        System.out.println("\n");
+        System.out.println("\n");
+        System.out.println("\n");
+        //System.out.println("//Displays the countries");
+
+        System.out.println("//Displays population of the world");
+        /*
+        * Not done yet.
+        *
+         */
+
+        // Displays the population of every country individually.
+        System.out.println("//Displays the population of every country individually.");
         a.displayCountry(country);
 
-        System.out.println("Issue 2");
+       /* System.out.println("Issue 2"); */
 
-        //Displays the continent countries
+        //Displays the population of each Country, grouped by Continent:
+
+        // Asia
+        System.out.println("\n\n Population of countries in Asia: \n");
         a.displayCountry(contAsia);
+
+        // Africa
+        System.out.println("\n\nPopulation of countries in Africa: \n");
         a.displayCountry(contAfrica);
+
+        // N America
+        System.out.println("\n\nPopulation of countries in North America: \n");
         a.displayCountry(contNA);
+
+        // S America
+        System.out.println("\n\nPopulation of countries in South America: \n");
         a.displayCountry(contSA);
+
+        // Europe
+        System.out.println("\n\nPopulation of countries in Europe: \n");
         a.displayCountry(contEurope);
+
+        // Oceania
+        System.out.println("\n\nPopulation of countries in Oceania: \n");
         a.displayCountry(contOc);
+
+        // Antarctica
+        System.out.println("\n\nPopulation of countries in Antarctica: \n");
         a.displayCountry(contAnt);
 
-        // Disconnect from database
+
+        // Disconnects from the database:
         a.disconnect();
     }
     /**
@@ -115,25 +154,27 @@ public class Application
         }
     }
 
-    public ArrayList<String> getCountry()
+    // Gets all the Countries in the world and stores them in a Country, sorted by Population. *************
+    public ArrayList<Country> getCountry()
     {
         try
         {
-            // Create an SQL statement
+            // Creates an SQL statement.
             Statement stmt = con.createStatement();
 
-            //creates an array list to store the data
-            ArrayList<String> output = new ArrayList<String>();
+            // Creates an array list to store the data.
+            ArrayList<Country> output = new ArrayList<Country>();
 
+            // Creates an SQL statement, stored as a STRING.
             String strSelect =
                     "SELECT Name, Population, Code, Continent, Region, Capital "
                             + "FROM country "
                             + "ORDER BY Population DESC ";
 
-            // Execute SQL statement
+            // Sends the SQL statement to the database.
             ResultSet rset = stmt.executeQuery(strSelect);
 
-
+            // Indicates which columns on the database align to which attributes within "country".
             while (rset.next()) {
                 Country country =  new Country();
                 country.code = rset.getString("Code");
@@ -143,42 +184,45 @@ public class Application
                 country.population = rset.getInt("Population");
                 country.capital = rset.getString("Capital");
 
-                //stores the results into a string
+               /* //stores the results into a string
                 String store = country.code + " " + country.name + " " + country.continent + " " + country.region + " "
-                        + country.population + " " + country.capital;
+                        + country.population + " " + country.capital; */
 
-                //stores it into an array list
-                output.add(store);
+                // Adds this country (plus details) to the ArrayList.
+                output.add(country);
             }
-            //returns the array list
+            // Returns the ArrayList.
             return output;
         }
         catch (Exception e)
         {
             System.out.println(e.getMessage());
-            System.out.println("Failed to get employee details");
+            System.out.println("Failed to get information from database (Countries); check connection?");
             return null;
         }
     }
 
-    public ArrayList<String> getContAsia()
+    // Displays all details for Continent of Asia and returns COUNTRY. **************************
+    public ArrayList<Country> getContAsia()
     {
         try {
             // Create an SQL statement
             Statement stmt = con.createStatement();
 
-            //creates an array list to store the data
-            ArrayList<String> output = new ArrayList<String>();
+            // Creates an array list to store the data
+            ArrayList<Country> output = new ArrayList<Country>();
 
+            // Creates an SQL statement, stored as a STRING.
             String strSelect =
                     "SELECT Name, Population, Code, Continent, Region, Capital "
                             + "FROM country "
                             + "WHERE Continent LIKE 'Asia' "
                             + "ORDER BY Population DESC ";
-            // Execute SQL statement
+
+            // Sends the query to the database:
             ResultSet rset = stmt.executeQuery(strSelect);
 
-
+            // Indicates which columns on the database align to which attributes within "country".
             while (rset.next()) {
                 Country country = new Country();
                 country.code = rset.getString("Code");
@@ -188,44 +232,45 @@ public class Application
                 country.population = rset.getInt("Population");
                 country.capital = rset.getString("Capital");
 
-                //stores the results into a string
+                /* // Stores the results into a string
                 String store = country.code + " " + country.name + " " + country.continent + " " + country.region + " "
-                        + country.population + " " + country.capital;
+                        + country.population + " " + country.capital; */
 
-                //stores it into an array list
-                output.add(store);
+                // Adds this country (plus details) to the ArrayList.
+                output.add(country);
             }
-            //returns the array list
+            // Returns the ArrayList.
             return output;
         }
         catch (Exception e)
         {
             System.out.println(e.getMessage());
-            System.out.println("Failed to get employee details");
+            System.out.println("Failed to get information from database (Asia); check connection?");
             return null;
         }
     }
 
-    public ArrayList<String> getContEurope()
+    // Displays all details for Continent of Europe and returns Country. **************************
+    public ArrayList<Country> getContEurope()
     {
         try
         {
-            // Create an SQL statement
+            // Creates an SQL statement.
             Statement stmt = con.createStatement();
-            // Create string for SQL statement
 
-            ArrayList<String> output = new ArrayList<String>();
+            ArrayList<Country> output = new ArrayList<Country>();
 
+            // Creates an SQL statement, stored as a STRING.
             String strSelect =
                     "SELECT Name, Population, Code, Continent, Region, Capital "
                             + "FROM country "
                             + "WHERE Continent LIKE 'Europe' "
                             + "ORDER BY Population DESC ";
-            // Execute SQL statement
+
+            // Sends the SQL statement to the database.
             ResultSet rset = stmt.executeQuery(strSelect);
 
-            // Return new employee if valid.
-            // Check one is returned
+            // Indicates which columns on the database align to which attributes within "country".
             while (rset.next()) {
                 Country country =  new Country();
                 country.code = rset.getString("Code");
@@ -235,24 +280,25 @@ public class Application
                 country.population = rset.getInt("Population");
                 country.capital = rset.getString("Capital");
 
-                String store = country.code + " " + country.name + " " + country.continent + " " + country.region + " "
-                        + country.population + " " + country.capital;
+                /*String store = country.code + " " + country.name + " " + country.continent + " " + country.region + " "
+                        + country.population + " " + country.capital; */
 
-                //stores it into an array list
-                output.add(store);
+                // Adds this country (plus details) to the ArrayList.
+                output.add(country);
             }
-            //returns the array list
+            // Returns the ArrayList.
             return output;
         }
         catch (Exception e)
         {
             System.out.println(e.getMessage());
-            System.out.println("Failed to get employee details");
+            System.out.println("Failed to get information from database (Europe); check connection?");
             return null;
         }
     }
 
-    public ArrayList<String> getContNorthAmerica()
+    // Displays all details for Continent of N America and returns Country. **************************
+    public ArrayList<Country> getContNorthAmerica()
     {
         try
         {
@@ -260,7 +306,7 @@ public class Application
             Statement stmt = con.createStatement();
             // Create string for SQL statement
 
-            ArrayList<String> output = new ArrayList<String>();
+            ArrayList<Country> output = new ArrayList<Country>();
 
             String strSelect =
                     "SELECT Name, Population, Code, Continent, Region, Capital "
@@ -281,43 +327,42 @@ public class Application
                 country.population = rset.getInt("Population");
                 country.capital = rset.getString("Capital");
 
-                String store = country.code + " " + country.name + " " + country.continent + " " + country.region + " "
-                        + country.population + " " + country.capital;
-
-                //stores it into an array list
-                output.add(store);
+                // Adds this country (plus details) to the ArrayList.
+                output.add(country);
             }
-            //returns the array list
+            // Returns the ArrayList.
             return output;
         }
         catch (Exception e)
         {
             System.out.println(e.getMessage());
-            System.out.println("Failed to get employee details");
+            System.out.println("Failed to get information from database (N America); check connection?");
             return null;
         }
     }
 
-    public ArrayList<String> getContSouthAmerica()
+    // Displays all details for Continent of S America and returns Country. **************************
+    public ArrayList<Country> getContSouthAmerica()
     {
         try
         {
-            // Create an SQL statement
+            // Creates an SQL statement.
             Statement stmt = con.createStatement();
-            // Create string for SQL statement
 
-            ArrayList<String> output = new ArrayList<String>();
+            // Creates an array list to store the data.
+            ArrayList<Country> output = new ArrayList<Country>();
 
+            // Creates an SQL statement, stored as a STRING.
             String strSelect =
                     "SELECT Name, Population, Code, Continent, Region, Capital "
                             + "FROM country "
                             + "WHERE Continent LIKE 'South America' "
                             + "ORDER BY Population DESC ";
-            // Execute SQL statement
+
+            // Sends the SQL statement to the database.
             ResultSet rset = stmt.executeQuery(strSelect);
 
-            // Return new employee if valid.
-            // Check one is returned
+            // Indicates which columns on the database align to which attributes within "country".
             while (rset.next()) {
                 Country country =  new Country();
                 country.code = rset.getString("Code");
@@ -327,40 +372,45 @@ public class Application
                 country.population = rset.getInt("Population");
                 country.capital = rset.getString("Capital");
 
-                String store = country.code + " " + country.name + " " + country.continent + " " + country.region + " "
-                        + country.population + " " + country.capital;
+                /* String store = country.code + " " + country.name + " " + country.continent + " " + country.region + " "
+                        + country.population + " " + country.capital; */
 
-                //stores it into an array list
-                output.add(store);
+                // Adds this country (plus details) to the ArrayList.
+                output.add(country);
             }
-            //returns the array list
+            // Returns the ArrayList.
             return output;
         }
         catch (Exception e)
         {
             System.out.println(e.getMessage());
-            System.out.println("Failed to get employee details");
+            System.out.println("Failed to get information from database (S America); check connection?");
             return null;
         }
     }
 
-    public ArrayList<String> getContAfrica()
+
+    // Displays all details for Continent of Africa and returns Country. **************************
+    public ArrayList<Country> getContAfrica()
     {
         try {
-            // Create an SQL statement
+            // Creates an SQL statement.
             Statement stmt = con.createStatement();
-            // Create string for SQL statement
 
-            ArrayList<String> output = new ArrayList<String>();
+            // Creates an array list to store the data.
+            ArrayList<Country> output = new ArrayList<Country>();
 
+            // Creates an SQL statement, stored as a STRING.
             String strSelect =
                     "SELECT Name, Population, Code, Continent, Region, Capital "
                             + "FROM country "
                             + "WHERE Continent LIKE 'Africa' "
                             + "ORDER BY Population DESC ";
-            // Execute SQL statement
+
+            // Sends the SQL statement to the database.
             ResultSet rset = stmt.executeQuery(strSelect);
 
+            // Indicates which columns on the database align to which attributes within "country".
             while (rset.next()) {
                 Country country = new Country();
                 country.code = rset.getString("Code");
@@ -370,43 +420,44 @@ public class Application
                 country.population = rset.getInt("Population");
                 country.capital = rset.getString("Capital");
 
-                String store = country.code + " " + country.name + " " + country.continent + " " + country.region + " "
-                        + country.population + " " + country.capital;
+                /* String store = country.code + " " + country.name + " " + country.continent + " " + country.region + " "
+                        + country.population + " " + country.capital; */
 
-                //stores it into an array list
-                output.add(store);
+                // Adds this country (plus details) to the ArrayList.
+                output.add(country);
             }
-            //returns the array list
+            // Returns the ArrayList.
             return output;
         }
         catch (Exception e)
         {
             System.out.println(e.getMessage());
-            System.out.println("Failed to get employee details");
+            System.out.println("Failed to get information from database (Africa); check connection?");
             return null;
         }
     }
-
-    public ArrayList<String> getContOcean()
+    // Displays all details for Continent of Oceania and returns Country. **************************
+    public ArrayList<Country> getContOcean()
     {
         try
         {
-            // Create an SQL statement
+            // Creates an SQL statement.
             Statement stmt = con.createStatement();
-            // Create string for SQL statement
 
-            ArrayList<String> output = new ArrayList<String>();
+            // Creates an array list to store the data.
+            ArrayList<Country> output = new ArrayList<Country>();
 
+            // Creates an SQL statement, stored as a STRING.
             String strSelect =
                     "SELECT Name, Population, Code, Continent, Region, Capital "
                             + "FROM country "
                             + "WHERE Continent LIKE 'Oceania' "
                             + "ORDER BY Population DESC ";
-            // Execute SQL statement
+
+            // Sends the SQL statement to the database.
             ResultSet rset = stmt.executeQuery(strSelect);
 
-            // Return new employee if valid.
-            // Check one is returned
+            // Indicates which columns on the database align to which attributes within "country".
             while (rset.next()) {
                 Country country =  new Country();
                 country.code = rset.getString("Code");
@@ -416,43 +467,45 @@ public class Application
                 country.population = rset.getInt("Population");
                 country.capital = rset.getString("Capital");
 
-                String store = country.code + " " + country.name + " " + country.continent + " " + country.region + " "
-                        + country.population + " " + country.capital;
+                /* String store = country.code + " " + country.name + " " + country.continent + " " + country.region + " "
+                        + country.population + " " + country.capital; */
 
-                //stores it into an array list
-                output.add(store);
+                // Adds this country (plus details) to the ArrayList.
+                output.add(country);
             }
-            //returns the array list
+            // Returns the ArrayList.
             return output;
         }
         catch (Exception e)
         {
             System.out.println(e.getMessage());
-            System.out.println("Failed to get employee details");
+            System.out.println("Failed to get information from database (Oceania); check connection?\n");
             return null;
         }
     }
 
-    public ArrayList<String> getContAnt()
+    // Displays all details for Continent of Antarctica and returns Country. **************************
+    public ArrayList<Country> getContAnt()
     {
         try
         {
-            // Create an SQL statement
+            // Creates an SQL statement.
             Statement stmt = con.createStatement();
-            // Create string for SQL statement
 
-            ArrayList<String> output = new ArrayList<String>();
+            // Creates an array list to store the data.
+            ArrayList<Country> output = new ArrayList<Country>();
 
+            // Creates an SQL statement, stored as a STRING.
             String strSelect =
                     "SELECT Name, Population, Code, Continent, Region, Capital "
                             + "FROM country "
                             + "WHERE Continent LIKE 'Antarctica' "
                             + "ORDER BY Population DESC ";
-            // Execute SQL statement
+
+            // Sends the SQL statement to the database.
             ResultSet rset = stmt.executeQuery(strSelect);
 
-            // Return new employee if valid.
-            // Check one is returned
+            // Indicates which columns on the database align to which attributes within "country".
             while (rset.next()) {
                 Country country =  new Country();
                 country.code = rset.getString("Code");
@@ -462,19 +515,19 @@ public class Application
                 country.population = rset.getInt("Population");
                 country.capital = rset.getString("Capital");
 
-                String store = country.code + " " + country.name + " " + country.continent + " " + country.region + " "
-                        + country.population + " " + country.capital;
+                /* String store = country.code + " " + country.name + " " + country.continent + " " + country.region + " "
+                        + country.population + " " + country.capital; */
 
-                //stores it into an array list
-                output.add(store);
+                // Adds this country (plus details) to the ArrayList.
+                output.add(country);
             }
-            //returns the array list
+            // Returns the ArrayList.
             return output;
         }
         catch (Exception e)
         {
             System.out.println(e.getMessage());
-            System.out.println("Failed to get employee details");
+            System.out.println("Failed to get information from database (Antarctica); check connection?\n");
             return null;
         }
     }
@@ -488,6 +541,8 @@ public class Application
             output += country.get(i) + "\n";
         }
 
+        System.out.println("\n");
         System.out.println(output);
+        System.out.println("\n");
     }
 }
