@@ -1,3 +1,5 @@
+//This is the main application
+
 package set08103_cwk;
 
 import java.sql.*;
@@ -120,6 +122,7 @@ public class Application
             return null;
         }
     }
+
     public void displayCountry(ArrayList country)
     {
 
