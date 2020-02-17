@@ -96,14 +96,20 @@ public class Application
             String strSelect =
                     "SELECT Name , Population "
                             + "FROM country "
-                            + "ORDER BY Population ASC ";
+                            + "ORDER BY Population DESC ";
             // Execute SQL statement
             ResultSet rset = stmt.executeQuery(strSelect);
 
             // Return new employee if valid.
             // Check one is returned
             while (rset.next()) {
-                output.add(rset.toString());
+                Country country =  new Country();
+                country.name = rset.getString("Name");
+                country.population = rset.getInt("Population");
+
+                String store =  country.name + " " + country.population;
+
+                output.add(store);
             }
             return output;
         }
