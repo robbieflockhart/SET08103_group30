@@ -28,7 +28,7 @@ FROM country JOIN city ON country.Code = city.CountryCode
 WHERE country.Region LIKE <<replace with variable>>
 ORDER BY Population DESC
 
-Secong Priority
+Second Priority
 
 SELECT Name, Population
 FROM country
