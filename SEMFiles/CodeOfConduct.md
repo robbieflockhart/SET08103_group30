@@ -30,4 +30,4 @@ Code of conduct 
 
  
 
-8: Don't be afraid to ask other team members for assistance if you need it(e
+8: Don't be afraid to ask other team members for assistance if you need it
