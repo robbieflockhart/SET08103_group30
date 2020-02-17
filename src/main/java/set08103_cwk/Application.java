@@ -16,7 +16,31 @@ public class Application
         a.connect();
 
         ArrayList<String> country = a.getCountry();
+
+        ArrayList<String> contAsia = a.getContAsia();
+
+        ArrayList<String> contAfrica = a.getContAfrica();
+
+        ArrayList<String> contNA = a.getContNorthAmerica();
+
+        ArrayList<String> contSA = a.getContSouthAmerica();
+
+        ArrayList<String> contEurope = a.getContEurope();
+
+        ArrayList<String> contOc = a.getContOcean();
+
+        ArrayList<String> contAnt = a.getContAnt();
+
         a.displayCountry(country);
+
+        System.out.println("Issue 2");
+        a.displayCountry(contAsia);
+        a.displayCountry(contAfrica);
+        a.displayCountry(contNA);
+        a.displayCountry(contSA);
+        a.displayCountry(contEurope);
+        a.displayCountry(contOc);
+        a.displayCountry(contAnt);
         // Disconnect from database
         a.disconnect();
     }
@@ -96,7 +120,7 @@ public class Application
             ArrayList<String> output = new ArrayList<String>();
 
             String strSelect =
-                    "SELECT Name , Population "
+                    "SELECT Name, Population, Code, Continent, Region, Capital "
                             + "FROM country "
                             + "ORDER BY Population DESC ";
             // Execute SQL statement
@@ -106,10 +130,321 @@ public class Application
             // Check one is returned
             while (rset.next()) {
                 Country country =  new Country();
+                country.code = rset.getString("Code");
                 country.name = rset.getString("Name");
+                country.continent = rset.getString("Continent");
+                country.region = rset.getString("Region");
                 country.population = rset.getInt("Population");
+                country.capital = rset.getString("Capital");
 
-                String store =  country.name + " " + country.population;
+                String store = country.code + " " + country.name + " " + country.continent + " " + country.region + " "
+                        + country.population + " " + country.capital;
+
+                output.add(store);
+            }
+            return output;
+        }
+        catch (Exception e)
+        {
+            System.out.println(e.getMessage());
+            System.out.println("Failed to get employee details");
+            return null;
+        }
+    }
+
+    public ArrayList<String> getContAsia()
+    {
+        try {
+            // Create an SQL statement
+            Statement stmt = con.createStatement();
+            // Create string for SQL statement
+
+            ArrayList<String> output = new ArrayList<String>();
+
+            String strSelect =
+                    "SELECT Name, Population, Code, Continent, Region, Capital "
+                            + "FROM country "
+                            + "WHERE Continent LIKE 'Asia' "
+                            + "ORDER BY Population DESC ";
+            // Execute SQL statement
+            ResultSet rset = stmt.executeQuery(strSelect);
+
+            // Return new employee if valid.
+            // Check one is returned
+            while (rset.next()) {
+                Country country = new Country();
+                country.code = rset.getString("Code");
+                country.name = rset.getString("Name");
+                country.continent = rset.getString("Continent");
+                country.region = rset.getString("Region");
+                country.population = rset.getInt("Population");
+                country.capital = rset.getString("Capital");
+
+                String store = country.code + " " + country.name + " " + country.continent + " " + country.region + " "
+                        + country.population + " " + country.capital;
+
+                output.add(store);
+            }
+            return output;
+        }
+        catch (Exception e)
+        {
+            System.out.println(e.getMessage());
+            System.out.println("Failed to get employee details");
+            return null;
+        }
+    }
+
+    public ArrayList<String> getContEurope()
+    {
+        try
+        {
+            // Create an SQL statement
+            Statement stmt = con.createStatement();
+            // Create string for SQL statement
+
+            ArrayList<String> output = new ArrayList<String>();
+
+            String strSelect =
+                    "SELECT Name, Population, Code, Continent, Region, Capital "
+                            + "FROM country "
+                            + "WHERE Continent LIKE 'Europe' "
+                            + "ORDER BY Population DESC ";
+            // Execute SQL statement
+            ResultSet rset = stmt.executeQuery(strSelect);
+
+            // Return new employee if valid.
+            // Check one is returned
+            while (rset.next()) {
+                Country country =  new Country();
+                country.code = rset.getString("Code");
+                country.name = rset.getString("Name");
+                country.continent = rset.getString("Continent");
+                country.region = rset.getString("Region");
+                country.population = rset.getInt("Population");
+                country.capital = rset.getString("Capital");
+
+                String store = country.code + " " + country.name + " " + country.continent + " " + country.region + " "
+                        + country.population + " " + country.capital;
+
+                output.add(store);
+            }
+            return output;
+        }
+        catch (Exception e)
+        {
+            System.out.println(e.getMessage());
+            System.out.println("Failed to get employee details");
+            return null;
+        }
+    }
+
+    public ArrayList<String> getContNorthAmerica()
+    {
+        try
+        {
+            // Create an SQL statement
+            Statement stmt = con.createStatement();
+            // Create string for SQL statement
+
+            ArrayList<String> output = new ArrayList<String>();
+
+            String strSelect =
+                    "SELECT Name, Population, Code, Continent, Region, Capital "
+                            + "FROM country "
+                            + "WHERE Continent LIKE 'North America' "
+                            + "ORDER BY Population DESC ";
+            // Execute SQL statement
+            ResultSet rset = stmt.executeQuery(strSelect);
+
+            // Return new employee if valid.
+            // Check one is returned
+            while (rset.next()) {
+                Country country =  new Country();
+                country.code = rset.getString("Code");
+                country.name = rset.getString("Name");
+                country.continent = rset.getString("Continent");
+                country.region = rset.getString("Region");
+                country.population = rset.getInt("Population");
+                country.capital = rset.getString("Capital");
+
+                String store = country.code + " " + country.name + " " + country.continent + " " + country.region + " "
+                        + country.population + " " + country.capital;
+
+                output.add(store);
+            }
+            return output;
+        }
+        catch (Exception e)
+        {
+            System.out.println(e.getMessage());
+            System.out.println("Failed to get employee details");
+            return null;
+        }
+    }
+
+    public ArrayList<String> getContSouthAmerica()
+    {
+        try
+        {
+            // Create an SQL statement
+            Statement stmt = con.createStatement();
+            // Create string for SQL statement
+
+            ArrayList<String> output = new ArrayList<String>();
+
+            String strSelect =
+                    "SELECT Name, Population, Code, Continent, Region, Capital "
+                            + "FROM country "
+                            + "WHERE Continent LIKE 'South America' "
+                            + "ORDER BY Population DESC ";
+            // Execute SQL statement
+            ResultSet rset = stmt.executeQuery(strSelect);
+
+            // Return new employee if valid.
+            // Check one is returned
+            while (rset.next()) {
+                Country country =  new Country();
+                country.code = rset.getString("Code");
+                country.name = rset.getString("Name");
+                country.continent = rset.getString("Continent");
+                country.region = rset.getString("Region");
+                country.population = rset.getInt("Population");
+                country.capital = rset.getString("Capital");
+
+                String store = country.code + " " + country.name + " " + country.continent + " " + country.region + " "
+                        + country.population + " " + country.capital;
+
+                output.add(store);
+            }
+            return output;
+        }
+        catch (Exception e)
+        {
+            System.out.println(e.getMessage());
+            System.out.println("Failed to get employee details");
+            return null;
+        }
+    }
+
+    public ArrayList<String> getContAfrica()
+    {
+        try {
+            // Create an SQL statement
+            Statement stmt = con.createStatement();
+            // Create string for SQL statement
+
+            ArrayList<String> output = new ArrayList<String>();
+
+            String strSelect =
+                    "SELECT Name, Population, Code, Continent, Region, Capital "
+                            + "FROM country "
+                            + "WHERE Continent LIKE 'Africa' "
+                            + "ORDER BY Population DESC ";
+            // Execute SQL statement
+            ResultSet rset = stmt.executeQuery(strSelect);
+
+            // Return new employee if valid.
+            // Check one is returned
+            while (rset.next()) {
+                Country country = new Country();
+                country.code = rset.getString("Code");
+                country.name = rset.getString("Name");
+                country.continent = rset.getString("Continent");
+                country.region = rset.getString("Region");
+                country.population = rset.getInt("Population");
+                country.capital = rset.getString("Capital");
+
+                String store = country.code + " " + country.name + " " + country.continent + " " + country.region + " "
+                        + country.population + " " + country.capital;
+
+                output.add(store);
+            }
+            return output;
+        }
+        catch (Exception e)
+        {
+            System.out.println(e.getMessage());
+            System.out.println("Failed to get employee details");
+            return null;
+        }
+    }
+
+    public ArrayList<String> getContOcean()
+    {
+        try
+        {
+            // Create an SQL statement
+            Statement stmt = con.createStatement();
+            // Create string for SQL statement
+
+            ArrayList<String> output = new ArrayList<String>();
+
+            String strSelect =
+                    "SELECT Name, Population, Code, Continent, Region, Capital "
+                            + "FROM country "
+                            + "WHERE Continent LIKE 'Oceania' "
+                            + "ORDER BY Population DESC ";
+            // Execute SQL statement
+            ResultSet rset = stmt.executeQuery(strSelect);
+
+            // Return new employee if valid.
+            // Check one is returned
+            while (rset.next()) {
+                Country country =  new Country();
+                country.code = rset.getString("Code");
+                country.name = rset.getString("Name");
+                country.continent = rset.getString("Continent");
+                country.region = rset.getString("Region");
+                country.population = rset.getInt("Population");
+                country.capital = rset.getString("Capital");
+
+                String store = country.code + " " + country.name + " " + country.continent + " " + country.region + " "
+                        + country.population + " " + country.capital;
+
+                output.add(store);
+            }
+            return output;
+        }
+        catch (Exception e)
+        {
+            System.out.println(e.getMessage());
+            System.out.println("Failed to get employee details");
+            return null;
+        }
+    }
+
+    public ArrayList<String> getContAnt()
+    {
+        try
+        {
+            // Create an SQL statement
+            Statement stmt = con.createStatement();
+            // Create string for SQL statement
+
+            ArrayList<String> output = new ArrayList<String>();
+
+            String strSelect =
+                    "SELECT Name, Population, Code, Continent, Region, Capital "
+                            + "FROM country "
+                            + "WHERE Continent LIKE 'Antarctica' "
+                            + "ORDER BY Population DESC ";
+            // Execute SQL statement
+            ResultSet rset = stmt.executeQuery(strSelect);
+
+            // Return new employee if valid.
+            // Check one is returned
+            while (rset.next()) {
+                Country country =  new Country();
+                country.code = rset.getString("Code");
+                country.name = rset.getString("Name");
+                country.continent = rset.getString("Continent");
+                country.region = rset.getString("Region");
+                country.population = rset.getInt("Population");
+                country.capital = rset.getString("Capital");
+
+                String store = country.code + " " + country.name + " " + country.continent + " " + country.region + " "
+                        + country.population + " " + country.capital;
 
                 output.add(store);
             }

@@ -8,4 +8,12 @@ public class Country {
 
     public int population;
 
+    public String code;
+
+    public String region;
+
+    public String continent;
+
+    public String capital;
+
 }
