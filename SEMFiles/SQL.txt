@@ -1,3 +1,5 @@
+First Prority
+
 SELECT Name, Population
 FROM country
 ORDER BY Population DESC
@@ -11,23 +13,6 @@ SELECT Name, Population, Region
 FROM country
 WHERE Region LIKE <<replace with variable>>
 ORDER BY Population DESC
-
-SELECT Name, Population
-FROM country
-ORDER BY Population DESC
-LIMIT <<replace with int variable>>
-
-SELECT Name, Population, Continent
-FROM country
-WHERE Continent LIKE <<replace with variable>>
-ORDER BY Population DESC
-LIMIT <<replace with int variable>>
-
-SELECT Name, Population, Region
-FROM country
-WHERE Region LIKE <<replace with variable>>
-ORDER BY Population DESC
-LIMIT <<replace with int variable>>
 
 SELECT Name, Population
 FROM city
@@ -43,8 +28,21 @@ FROM country JOIN city ON country.Code = city.CountryCode
 WHERE country.Region LIKE <<replace with variable>>
 ORDER BY Population DESC
 
+Second Priority
 
+SELECT Name, Population
+FROM country
+ORDER BY Population DESC
+LIMIT <<replace with int variable>>
 
+SELECT Name, Population, Continent
+FROM country
+WHERE Continent LIKE <<replace with variable>>
+ORDER BY Population DESC
+LIMIT <<replace with int variable>>
 
-
-
+SELECT Name, Population, Region
+FROM country
+WHERE Region LIKE <<replace with variable>>
+ORDER BY Population DESC
+LIMIT <<replace with int variable>>
