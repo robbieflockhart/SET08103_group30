@@ -18,7 +18,7 @@ public class Application
         // Connect to database
         a.connect();
 
-        //runs function to get the countries in population order
+        // Gets all the countries in the world and saves them to an arraylist, in population order.
         ArrayList<Country> country = a.getCountry();
 
         //Creates an Array List to store the countries, and then calls the function ...
@@ -37,29 +37,17 @@ public class Application
 
         ArrayList<Country> contAnt = a.getContAnt();
 
-        //Displays the countries
-        System.out.println("\n");
-        System.out.println("\n");
-        System.out.println("\n");
-        //System.out.println("//Displays the countries");
+        // Prints out a table of all the countries in the world, sorted by population.
+        System.out.println("\n\n\nShowing all countries in the world, sorted by POPULATION:");
+        a.displayCountry(country); // ("country" is a list of all the countries in the world).
 
-        System.out.println("//Displays population of the world");
-        /*
-        * Not done yet.
-        *
-         */
 
-        // Displays the population of every country individually.
-        System.out.println("//Displays the population of every country individually.");
-        a.displayCountry(country);
-
-       /* System.out.println("Issue 2"); */
-
-        //Displays the population of each Country, grouped by Continent:
+        // Prints out a table of all the countries in the world, grouped by continent (with a gap between...
+        // ... each continent), sorted by population.
 
         // Asia
         System.out.println("\n\n Population of countries in Asia: \n");
-        a.displayCountry(contAsia);
+        a.displayCountry(contAsia); // ("contAsia" is a list of all the countries in Asia).
 
         // Africa
         System.out.println("\n\nPopulation of countries in Africa: \n");
@@ -184,10 +172,6 @@ public class Application
                 country.population = rset.getInt("Population");
                 country.capital = rset.getString("Capital");
 
-               /* //stores the results into a string
-                String store = country.code + " " + country.name + " " + country.continent + " " + country.region + " "
-                        + country.population + " " + country.capital; */
-
                 // Adds this country (plus details) to the ArrayList.
                 output.add(country);
             }
@@ -232,10 +216,6 @@ public class Application
                 country.population = rset.getInt("Population");
                 country.capital = rset.getString("Capital");
 
-                /* // Stores the results into a string
-                String store = country.code + " " + country.name + " " + country.continent + " " + country.region + " "
-                        + country.population + " " + country.capital; */
-
                 // Adds this country (plus details) to the ArrayList.
                 output.add(country);
             }
@@ -279,9 +259,6 @@ public class Application
                 country.region = rset.getString("Region");
                 country.population = rset.getInt("Population");
                 country.capital = rset.getString("Capital");
-
-                /*String store = country.code + " " + country.name + " " + country.continent + " " + country.region + " "
-                        + country.population + " " + country.capital; */
 
                 // Adds this country (plus details) to the ArrayList.
                 output.add(country);
@@ -372,9 +349,6 @@ public class Application
                 country.population = rset.getInt("Population");
                 country.capital = rset.getString("Capital");
 
-                /* String store = country.code + " " + country.name + " " + country.continent + " " + country.region + " "
-                        + country.population + " " + country.capital; */
-
                 // Adds this country (plus details) to the ArrayList.
                 output.add(country);
             }
@@ -420,9 +394,6 @@ public class Application
                 country.population = rset.getInt("Population");
                 country.capital = rset.getString("Capital");
 
-                /* String store = country.code + " " + country.name + " " + country.continent + " " + country.region + " "
-                        + country.population + " " + country.capital; */
-
                 // Adds this country (plus details) to the ArrayList.
                 output.add(country);
             }
@@ -466,9 +437,6 @@ public class Application
                 country.region = rset.getString("Region");
                 country.population = rset.getInt("Population");
                 country.capital = rset.getString("Capital");
-
-                /* String store = country.code + " " + country.name + " " + country.continent + " " + country.region + " "
-                        + country.population + " " + country.capital; */
 
                 // Adds this country (plus details) to the ArrayList.
                 output.add(country);
@@ -515,9 +483,6 @@ public class Application
                 country.population = rset.getInt("Population");
                 country.capital = rset.getString("Capital");
 
-                /* String store = country.code + " " + country.name + " " + country.continent + " " + country.region + " "
-                        + country.population + " " + country.capital; */
-
                 // Adds this country (plus details) to the ArrayList.
                 output.add(country);
             }
@@ -532,17 +497,15 @@ public class Application
         }
     }
 
-    public void displayCountry(ArrayList country)
+    // Prints out a table of all the countries passed in, sorted by population.
+    public void displayCountry(ArrayList<Country> countries)
     {
-
-        String output = "";
-        for(int i = 0; i < country.size(); i++)
+        System.out.println(String.format("%-10s %-20s %-30s %-40s %-50s %-60s", "Code", "Name", "Continent", "Region", "Population", "Capital ID"));
+        for (Country country : countries)
         {
-            output += country.get(i) + "\n";
+            String countryString = String.format("%-10s %-20s %-30s %-40s %-50s %-60s", country.code, country.name, country.continent, country.region, country.population, country.capital);
+            System.out.println(countryString);
         }
 
-        System.out.println("\n");
-        System.out.println(output);
-        System.out.println("\n");
     }
 }
