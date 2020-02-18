@@ -46,7 +46,7 @@ public class Application
         // ... each continent), sorted by population.
 
         // Asia
-        System.out.println("\n\n Population of countries in Asia: \n");
+        System.out.println("\n\nPopulation of countries in Asia: \n");
         a.displayCountry(contAsia); // ("contAsia" is a list of all the countries in Asia).
 
         // Africa
