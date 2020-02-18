@@ -500,12 +500,15 @@ public class Application
     // Prints out a table of all the countries passed in, sorted by population.
     public void displayCountry(ArrayList<Country> countries)
     {
-        System.out.println(String.format("%-10s %-20s %-30s %-40s %-50s %-60s", "Code", "Name", "Continent", "Region", "Population", "Capital ID"));
+        System.out.println("+------+---------------------------------------------------+---------------------+-------------------------------+----------------+----------+");
+                System.out.println(String.format("|%-5s |%-50s |%-20s |%-30s |%-15s |%-10s|", "Code", "Name", "Continent", "Region", "Population", "Capital ID"));
         for (Country country : countries)
         {
-            String countryString = String.format("%-10s %-20s %-30s %-40s %-50s %-60s", country.code, country.name, country.continent, country.region, country.population, country.capital);
+            String countryString = String.format("|%-5s |%-50s |%-20s |%-30s |%-15s |%-10s|", country.code, country.name, country.continent, country.region, country.population, country.capital);
+            System.out.println("+------+---------------------------------------------------+---------------------+-------------------------------+----------------+----------+");
             System.out.println(countryString);
         }
+        System.out.println("+------+---------------------------------------------------+---------------------+-------------------------------+----------------+----------+");
 
     }
 }
