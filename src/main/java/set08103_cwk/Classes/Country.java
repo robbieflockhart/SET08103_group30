@@ -1,6 +1,6 @@
 //Country class
 
-package set08103_cwk;
+package set08103_cwk.Classes;
 
 public class Country {
 

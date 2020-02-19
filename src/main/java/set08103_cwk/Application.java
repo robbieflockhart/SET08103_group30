@@ -5,7 +5,8 @@
 
 package set08103_cwk;
 
-import java.sql.*;
+import set08103_cwk.Classes.Country;
+
 import java.util.ArrayList;
 
 public class Application
@@ -14,7 +15,6 @@ public class Application
     public static void main(String[] args)
     {
         // Create new Application
-        Application a = new Application();
         DatabaseConnection dc = new DatabaseConnection();
         CountryFunctions cf = new CountryFunctions();
         DisplayFunctions df = new DisplayFunctions();
