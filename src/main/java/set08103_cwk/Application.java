@@ -41,6 +41,8 @@ public class Application
 
         ArrayList<Country> contAnt = cf.getContAnt(dc.database());
 
+        ArrayList<Country> countryRegion = cf.getRegion(dc.database());
+
         // Prints out a table of all the countries in the world, sorted by population.
         System.out.println("\n\nShowing all countries in the world, sorted by POPULATION:\n");
         df.displayCountry(country); // ("country" is a list of all the countries in the world).
@@ -76,6 +78,10 @@ public class Application
         // Antarctica
         System.out.println("\n\nPopulation of countries in Antarctica: \n");
         df.displayCountry(contAnt);
+
+        // region
+        System.out.println("\n\nRegion Feature: \n");
+        df.displayCountry(countryRegion);
 
 
         // Disconnects from the database:
