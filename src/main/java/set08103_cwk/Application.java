@@ -82,6 +82,4 @@ public class Application
         dc.disconnect();
     }
 
-    // Prints out a table of all the countries passed in, sorted by population.
-
 }

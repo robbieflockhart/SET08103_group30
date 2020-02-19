@@ -4,6 +4,8 @@ import java.util.ArrayList;
 
 public class DisplayFunctions {
 
+    // Prints out a table of all the countries passed in, sorted by population.
+
     public void displayCountry(ArrayList<Country> countries)
     {
         for (Country country : countries)
