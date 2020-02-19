@@ -5,6 +5,8 @@
 
 package set08103_cwk;
 
+import set08103_cwk.Classes.CapitalCity;
+import set08103_cwk.Classes.City;
 import set08103_cwk.Classes.Country;
 
 import java.util.ArrayList;
