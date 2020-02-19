@@ -24,8 +24,8 @@ public class DisplayFunctions {
     {
         for (City city : cities)
         {
-            String countryString = String.format(city.name + ", " + city.country + ", " + city.name + ", " + city.district + ", " + city.population + "\n");
-            System.out.println(countryString);
+            String cityString = String.format(city.name + ", " + city.country + ", " + city.name + ", " + city.district + ", " + city.population + "\n");
+            System.out.println(cityString);
         }
 
     }
@@ -34,8 +34,8 @@ public class DisplayFunctions {
     {
         for (CapitalCity city : capital)
         {
-            String countryString = String.format(city.name + ", " + city.country + ", " + city.name  + ", " + city.population + "\n");
-            System.out.println(countryString);
+            String capitalCityString = String.format(city.name + ", " + city.country + ", " + city.name  + ", " + city.population + "\n");
+            System.out.println(capitalCityString);
         }
 
     }
