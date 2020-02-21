@@ -14,8 +14,7 @@ public class DisplayFunctions {
     {
         for (Country country : countries)
         {
-            String countryString = String.format(country.code + ", " + country.name + ", " + country.continent + ", " + country.region + ", " + country.population + ", " + country.capital + "\n");
-            System.out.println(countryString);
+            System.out.println(country.toString());
         }
 
     }
@@ -24,18 +23,16 @@ public class DisplayFunctions {
     {
         for (City city : cities)
         {
-            String cityString = String.format(city.name + ", " + city.country + ", " + city.name + ", " + city.district + ", " + city.population + "\n");
-            System.out.println(cityString);
+            System.out.println(city.toString());
         }
 
     }
 
     public void displayCapitalCity(ArrayList<CapitalCity> capital)
     {
-        for (CapitalCity city : capital)
+        for (CapitalCity capitalCity : capital)
         {
-            String capitalCityString = String.format(city.name + ", " + city.country + ", " + city.name  + ", " + city.population + "\n");
-            System.out.println(capitalCityString);
+            System.out.println(capitalCity.toString());
         }
 
     }

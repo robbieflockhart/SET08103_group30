@@ -2,13 +2,49 @@ package set08103_cwk.Classes;
 
 public class City {
 
-    public String name;
+    private String name;
 
-    public String country;
+    private String country;
 
-    public String district;
+    private String district;
 
-    public int population;
+    private int population;
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getCountry() {
+        return country;
+    }
+
+    public void setCountry(String country) {
+        this.country = country;
+    }
+
+    public String getDistrict() {
+        return district;
+    }
+
+    public void setDistrict(String district) {
+        this.district = district;
+    }
+
+    public int getPopulation() {
+        return population;
+    }
+
+    public void setPopulation(int population) {
+        this.population = population;
+    }
 
 
+    @Override
+    public String toString() {
+        return name + ", " + country + ", " + name + ", " + district + ", " + population + "\n";
+    }
 }

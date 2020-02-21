@@ -18,7 +18,11 @@ public class Application
     {
         // Create new Application
         DatabaseConnection dc = new DatabaseConnection();
+
         CountryFunctions cf = new CountryFunctions();
+        CityFunctions cityFunc = new CityFunctions();
+        CapitalCityFunctions capCityFunc = new CapitalCityFunctions();
+
         DisplayFunctions df = new DisplayFunctions();
 
         // Connect to database

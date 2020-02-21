@@ -29,12 +29,12 @@ public class CountryFunctions {
             // Indicates which columns on the database align to which attributes within "country".
             while (rset.next()) {
                 Country country =  new Country();
-                country.code = rset.getString("Code");
-                country.name = rset.getString("Name");
-                country.continent = rset.getString("Continent");
-                country.region = rset.getString("Region");
-                country.population = rset.getInt("Population");
-                country.capital = rset.getString("Capital");
+                country.setCode(rset.getString("Code"));
+                country.setName(rset.getString("Name"));
+                country.setContinent(rset.getString("Continent"));
+                country.setRegion(rset.getString("Region"));
+                country.setPopulation(rset.getInt("Population"));
+                country.setCapital(rset.getString("Capital"));
 
                 // Adds this country (plus details) to the ArrayList.
                 output.add(country);
@@ -73,13 +73,13 @@ public class CountryFunctions {
 
             // Indicates which columns on the database align to which attributes within "country".
             while (rset.next()) {
-                Country country = new Country();
-                country.code = rset.getString("Code");
-                country.name = rset.getString("Name");
-                country.continent = rset.getString("Continent");
-                country.region = rset.getString("Region");
-                country.population = rset.getInt("Population");
-                country.capital = rset.getString("Capital");
+                Country country =  new Country();
+                country.setCode(rset.getString("Code"));
+                country.setName(rset.getString("Name"));
+                country.setContinent(rset.getString("Continent"));
+                country.setRegion(rset.getString("Region"));
+                country.setPopulation(rset.getInt("Population"));
+                country.setCapital(rset.getString("Capital"));
 
                 // Adds this country (plus details) to the ArrayList.
                 output.add(country);
@@ -118,12 +118,12 @@ public class CountryFunctions {
             // Indicates which columns on the database align to which attributes within "country".
             while (rset.next()) {
                 Country country =  new Country();
-                country.code = rset.getString("Code");
-                country.name = rset.getString("Name");
-                country.continent = rset.getString("Continent");
-                country.region = rset.getString("Region");
-                country.population = rset.getInt("Population");
-                country.capital = rset.getString("Capital");
+                country.setCode(rset.getString("Code"));
+                country.setName(rset.getString("Name"));
+                country.setContinent(rset.getString("Continent"));
+                country.setRegion(rset.getString("Region"));
+                country.setPopulation(rset.getInt("Population"));
+                country.setCapital(rset.getString("Capital"));
 
                 // Adds this country (plus details) to the ArrayList.
                 output.add(country);
@@ -162,12 +162,12 @@ public class CountryFunctions {
             // Check one is returned
             while (rset.next()) {
                 Country country =  new Country();
-                country.code = rset.getString("Code");
-                country.name = rset.getString("Name");
-                country.continent = rset.getString("Continent");
-                country.region = rset.getString("Region");
-                country.population = rset.getInt("Population");
-                country.capital = rset.getString("Capital");
+                country.setCode(rset.getString("Code"));
+                country.setName(rset.getString("Name"));
+                country.setContinent(rset.getString("Continent"));
+                country.setRegion(rset.getString("Region"));
+                country.setPopulation(rset.getInt("Population"));
+                country.setCapital(rset.getString("Capital"));
 
                 // Adds this country (plus details) to the ArrayList.
                 output.add(country);
@@ -207,12 +207,12 @@ public class CountryFunctions {
             // Indicates which columns on the database align to which attributes within "country".
             while (rset.next()) {
                 Country country =  new Country();
-                country.code = rset.getString("Code");
-                country.name = rset.getString("Name");
-                country.continent = rset.getString("Continent");
-                country.region = rset.getString("Region");
-                country.population = rset.getInt("Population");
-                country.capital = rset.getString("Capital");
+                country.setCode(rset.getString("Code"));
+                country.setName(rset.getString("Name"));
+                country.setContinent(rset.getString("Continent"));
+                country.setRegion(rset.getString("Region"));
+                country.setPopulation(rset.getInt("Population"));
+                country.setCapital(rset.getString("Capital"));
 
                 // Adds this country (plus details) to the ArrayList.
                 output.add(country);
@@ -251,13 +251,13 @@ public class CountryFunctions {
 
             // Indicates which columns on the database align to which attributes within "country".
             while (rset.next()) {
-                Country country = new Country();
-                country.code = rset.getString("Code");
-                country.name = rset.getString("Name");
-                country.continent = rset.getString("Continent");
-                country.region = rset.getString("Region");
-                country.population = rset.getInt("Population");
-                country.capital = rset.getString("Capital");
+                Country country =  new Country();
+                country.setCode(rset.getString("Code"));
+                country.setName(rset.getString("Name"));
+                country.setContinent(rset.getString("Continent"));
+                country.setRegion(rset.getString("Region"));
+                country.setPopulation(rset.getInt("Population"));
+                country.setCapital(rset.getString("Capital"));
 
                 // Adds this country (plus details) to the ArrayList.
                 output.add(country);
@@ -296,12 +296,12 @@ public class CountryFunctions {
             // Indicates which columns on the database align to which attributes within "country".
             while (rset.next()) {
                 Country country =  new Country();
-                country.code = rset.getString("Code");
-                country.name = rset.getString("Name");
-                country.continent = rset.getString("Continent");
-                country.region = rset.getString("Region");
-                country.population = rset.getInt("Population");
-                country.capital = rset.getString("Capital");
+                country.setCode(rset.getString("Code"));
+                country.setName(rset.getString("Name"));
+                country.setContinent(rset.getString("Continent"));
+                country.setRegion(rset.getString("Region"));
+                country.setPopulation(rset.getInt("Population"));
+                country.setCapital(rset.getString("Capital"));
 
                 // Adds this country (plus details) to the ArrayList.
                 output.add(country);
@@ -341,12 +341,12 @@ public class CountryFunctions {
             // Indicates which columns on the database align to which attributes within "country".
             while (rset.next()) {
                 Country country =  new Country();
-                country.code = rset.getString("Code");
-                country.name = rset.getString("Name");
-                country.continent = rset.getString("Continent");
-                country.region = rset.getString("Region");
-                country.population = rset.getInt("Population");
-                country.capital = rset.getString("Capital");
+                country.setCode(rset.getString("Code"));
+                country.setName(rset.getString("Name"));
+                country.setContinent(rset.getString("Continent"));
+                country.setRegion(rset.getString("Region"));
+                country.setPopulation(rset.getInt("Population"));
+                country.setCapital(rset.getString("Capital"));
 
                 // Adds this country (plus details) to the ArrayList.
                 output.add(country);
@@ -384,12 +384,12 @@ public class CountryFunctions {
             // Indicates which columns on the database align to which attributes within "country".
             while (rset.next()) {
                 Country country =  new Country();
-                country.code = rset.getString("Code");
-                country.name = rset.getString("Name");
-                country.continent = rset.getString("Continent");
-                country.region = rset.getString("Region");
-                country.population = rset.getInt("Population");
-                country.capital = rset.getString("Capital");
+                country.setCode(rset.getString("Code"));
+                country.setName(rset.getString("Name"));
+                country.setContinent(rset.getString("Continent"));
+                country.setRegion(rset.getString("Region"));
+                country.setPopulation(rset.getInt("Population"));
+                country.setCapital(rset.getString("Capital"));
 
                 // Adds this country (plus details) to the ArrayList.
                 output.add(country);
