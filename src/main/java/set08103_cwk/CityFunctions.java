@@ -36,17 +36,17 @@ public class CityFunctions {
 
                 // Adds this country (plus details) to the ArrayList.
                 output.add(city);
-            }
+            }//end while
             // Returns the ArrayList.
             return output;
-        }
+        }//end try
         catch (Exception e)
         {
             System.out.println(e.getMessage());
             System.out.println("Failed to get information from database (City); check connection?");
             return null;
-        }
-    }
+        }//end catch
+    }//end getCity
 
     public ArrayList<City> getCityContAsia(Connection con)
     {
@@ -78,17 +78,17 @@ public class CityFunctions {
 
                 // Adds this country (plus details) to the ArrayList.
                 output.add(city);
-            }
+            }//end while
             // Returns the ArrayList.
             return output;
-        }
+        }//end try
         catch (Exception e)
         {
             System.out.println(e.getMessage());
             System.out.println("Failed to get information from database (Asia); check connection?");
             return null;
-        }
-    }
+        }//end catch
+    }//endCityContAsia
 
     // Displays all details for Continent of Europe and returns Country. **************************
     public ArrayList<City> getCityContEurope(Connection con)
@@ -120,17 +120,17 @@ public class CityFunctions {
 
                 // Adds this country (plus details) to the ArrayList.
                 output.add(city);
-            }
+            }//end while
             // Returns the ArrayList.
             return output;
-        }
+        }//end try
         catch (Exception e)
         {
             System.out.println(e.getMessage());
             System.out.println("Failed to get information from database (Europe); check connection?");
             return null;
-        }
-    }
+        }//end catch
+    }//end getCityContEurope
 
     // Displays all details for Continent of N America and returns Country. **************************
     public ArrayList<City> getCityContNorthAmerica(Connection con)
@@ -163,17 +163,17 @@ public class CityFunctions {
 
                 // Adds this country (plus details) to the ArrayList.
                 output.add(city);
-            }
+            }//end while
             // Returns the ArrayList.
             return output;
-        }
+        }//end try
         catch (Exception e)
         {
             System.out.println(e.getMessage());
             System.out.println("Failed to get information from database (N America); check connection?");
             return null;
-        }
-    }
+        }//end catch
+    }//end getCityContNorthAmerica
 
     // Displays all details for Continent of S America and returns Country. **************************
     public ArrayList<City> getCityContSouthAmerica(Connection con)
@@ -206,17 +206,17 @@ public class CityFunctions {
 
                 // Adds this country (plus details) to the ArrayList.
                 output.add(city);
-            }
+            }//end while
             // Returns the ArrayList.
             return output;
-        }
+        }//end try
         catch (Exception e)
         {
             System.out.println(e.getMessage());
             System.out.println("Failed to get information from database (S America); check connection?");
             return null;
-        }
-    }
+        }//end catch
+    }//end getCityContSouthAmerica
 
 
     // Displays all details for Continent of Africa and returns Country. **************************
@@ -249,17 +249,18 @@ public class CityFunctions {
 
                 // Adds this country (plus details) to the ArrayList.
                 output.add(city);
-            }
+            }//end while
             // Returns the ArrayList.
             return output;
-        }
+        }//end try
         catch (Exception e)
         {
             System.out.println(e.getMessage());
             System.out.println("Failed to get information from database (Africa); check connection?");
             return null;
-        }
-    }
+        }//end catch
+    }//end getCityContAfrica
+
     // Displays all details for Continent of Oceania and returns Country. **************************
     public ArrayList<City> getCityContOcean(Connection con)
     {
@@ -291,17 +292,17 @@ public class CityFunctions {
 
                 // Adds this country (plus details) to the ArrayList.
                 output.add(city);
-            }
+            }//end while
             // Returns the ArrayList.
             return output;
-        }
+        }//end try
         catch (Exception e)
         {
             System.out.println(e.getMessage());
             System.out.println("Failed to get information from database (Oceania); check connection?\n");
             return null;
-        }
-    }
+        }//end catch
+    }//end getCityContOcean
 
     // Displays all details for Continent of Antarctica and returns Country. **************************
     public ArrayList<City> getCityContAnt(Connection con)
@@ -334,17 +335,17 @@ public class CityFunctions {
 
                 // Adds this country (plus details) to the ArrayList.
                 output.add(city);
-            }
+            }//end while
             // Returns the ArrayList.
             return output;
-        }
+        }//end try
         catch (Exception e)
         {
             System.out.println(e.getMessage());
             System.out.println("Failed to get information from database (Antarctica); check connection?\n");
             return null;
-        }
-    }
+        }//end catch
+    }//end getCityContAnt
 
     public ArrayList<City> getCityRegion(Connection con)
     {
@@ -375,17 +376,16 @@ public class CityFunctions {
 
                 // Adds this country (plus details) to the ArrayList.
                 output.add(city);
-            }
+            }//end while
             // Returns the ArrayList.
             return output;
-        }
+        }//end try
         catch (Exception e)
         {
             System.out.println(e.getMessage());
             System.out.println("Failed to get information from database (Antarctica); check connection?\n");
             return null;
-        }
-    }
+        }//catch
+    }//end getCityRegion
 
-
-}
+}//end CityFunctions
