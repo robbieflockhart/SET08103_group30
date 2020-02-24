@@ -102,6 +102,7 @@ public class Application
         ArrayList<City> cityAfrica = cityFunc.getCityContAfrica(dc.database());
         ArrayList<City> cityOcean = cityFunc.getCityContOcean(dc.database());
         ArrayList<City> cityAnt = cityFunc.getCityContAnt(dc.database());
+        ArrayList<City> cityRegion = cityFunc.getCityRegion(dc.database());
 
 
         // Asia
@@ -110,7 +111,7 @@ public class Application
 
         // Africa
         System.out.println("\n\nPopulation of cities in Africa: \n");
-        df.displayCity(cityEurope);
+        df.displayCity(cityAfrica);
 
         // N America
         System.out.println("\n\nPopulation of cities in North America: \n");
@@ -131,6 +132,10 @@ public class Application
         // Antarctica
         System.out.println("\n\nPopulation of cities in Antarctica: \n");
         df.displayCity(cityAnt);
+
+        System.out.println("\n\nRegion Feature: \n");
+        df.displayCity(cityRegion);
+
 
 
         // Disconnects from the database:
