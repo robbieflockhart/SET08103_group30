@@ -135,9 +135,7 @@ public class Application
 
         System.out.println("\n\nRegion Feature: \n");
         df.displayCity(cityRegion);
-
-
-
+        
         // Disconnects from the database:
         dc.disconnect();
     }
