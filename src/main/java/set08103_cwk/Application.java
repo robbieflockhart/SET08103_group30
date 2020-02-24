@@ -90,6 +90,13 @@ public class Application
         df.displayCountry(countryRegion);
 
 
+
+
+        System.out.println("\n\nCity Functions: \n");
+        System.out.println("\n\nDisplay by population: \n");
+        ArrayList<City> cityPop = cityFunc.getCity(dc.database());
+        df.displayCity(cityPop);
+
         // Disconnects from the database:
         dc.disconnect();
     }
