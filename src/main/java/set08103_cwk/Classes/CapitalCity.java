@@ -8,6 +8,7 @@ public class CapitalCity {
 
     private int population;
 
+
     public String getName() {
         return name;
     }
