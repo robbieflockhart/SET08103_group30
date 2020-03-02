@@ -45,6 +45,6 @@ public class City {
 
     @Override
     public String toString() {
-        return name + ", " + country + ", " + name + ", " + district + ", " + population + "\n";
+        return name + ", " + country +  ", " + district + ", " + population + "\n";
     }
 }

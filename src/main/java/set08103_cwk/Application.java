@@ -90,6 +90,52 @@ public class Application
         df.displayCountry(countryRegion);
 
 
+        System.out.println("\n\nCity Functions: \n");
+        System.out.println("\n\nDisplay by population: \n");
+        ArrayList<City> cityPop = cityFunc.getCity(dc.database());
+        df.displayCity(cityPop);
+
+        ArrayList<City> cityAsia = cityFunc.getCityContAsia(dc.database());
+        ArrayList<City> cityEurope = cityFunc.getCityContEurope(dc.database());
+        ArrayList<City> cityNorthAmerica = cityFunc.getCityContNorthAmerica(dc.database());
+        ArrayList<City> citySouthAmerica = cityFunc.getCityContSouthAmerica(dc.database());
+        ArrayList<City> cityAfrica = cityFunc.getCityContAfrica(dc.database());
+        ArrayList<City> cityOcean = cityFunc.getCityContOcean(dc.database());
+        ArrayList<City> cityAnt = cityFunc.getCityContAnt(dc.database());
+        ArrayList<City> cityRegion = cityFunc.getCityRegion(dc.database());
+
+
+        // Asia
+        System.out.println("\n\nPopulation of cities in Asia: \n");
+        df.displayCity(cityAsia); // ("contAsia" is a list of all the countries in Asia).
+
+        // Africa
+        System.out.println("\n\nPopulation of cities in Africa: \n");
+        df.displayCity(cityAfrica);
+
+        // N America
+        System.out.println("\n\nPopulation of cities in North America: \n");
+        df.displayCity(cityNorthAmerica);
+
+        // S America
+        System.out.println("\n\nPopulation of cities in South America: \n");
+        df.displayCity(citySouthAmerica);
+
+        // Europe
+        System.out.println("\n\nPopulation of cities in Europe: \n");
+        df.displayCity(cityEurope);
+
+        // Oceania
+        System.out.println("\n\nPopulation of cities in Oceania: \n");
+        df.displayCity(cityOcean);
+
+        // Antarctica
+        System.out.println("\n\nPopulation of cities in Antarctica: \n");
+        df.displayCity(cityAnt);
+
+        System.out.println("\n\nRegion Feature: \n");
+        df.displayCity(cityRegion);
+        
         // Disconnects from the database:
         dc.disconnect();
     }
