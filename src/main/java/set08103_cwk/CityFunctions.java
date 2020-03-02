@@ -25,21 +25,8 @@ public class CityFunctions {
                             + "FROM city JOIN country ON CountryCode=code "
                             + "ORDER BY Population DESC ";
 
-            // Sends the SQL statement to the database.
-            ResultSet rset = stmt.executeQuery(strSelect);
-
             // Indicates which columns on the database align to which attributes within "country".
-            while (rset.next()) {
-                City city =  new City();
-                city.setName(rset.getString("city.Name"));
-                city.setCountry(rset.getString("country.Name"));
-                city.setDistrict(rset.getString("District"));
-                city.setPopulation(rset.getInt("city.Population"));
-
-                // Adds this country (plus details) to the ArrayList.
-                output.add(city);
-            }//end while
-            // Returns the ArrayList.
+            saveToArray(stmt,output, strSelect);
             return output;
         }//end try
         catch (Exception e)
@@ -67,21 +54,8 @@ public class CityFunctions {
                             + "WHERE Continent LIKE 'Asia' "
                             + "ORDER BY Population DESC ";
 
-            // Sends the query to the database:
-            ResultSet rset = stmt.executeQuery(strSelect);
-
             // Indicates which columns on the database align to which attributes within "country".
-            while (rset.next()) {
-                City city =  new City();
-                city.setName(rset.getString("city.Name"));
-                city.setCountry(rset.getString("country.Name"));
-                city.setDistrict(rset.getString("District"));
-                city.setPopulation(rset.getInt("city.Population"));
-
-                // Adds this country (plus details) to the ArrayList.
-                output.add(city);
-            }//end while
-            // Returns the ArrayList.
+            saveToArray(stmt,output, strSelect);
             return output;
         }//end try
         catch (Exception e)
@@ -109,21 +83,8 @@ public class CityFunctions {
                             + "WHERE Continent LIKE 'Europe' "
                             + "ORDER BY Population DESC ";
 
-            // Sends the query to the database:
-            ResultSet rset = stmt.executeQuery(strSelect);
-
             // Indicates which columns on the database align to which attributes within "country".
-            while (rset.next()) {
-                City city =  new City();
-                city.setName(rset.getString("city.Name"));
-                city.setCountry(rset.getString("country.Name"));
-                city.setDistrict(rset.getString("District"));
-                city.setPopulation(rset.getInt("city.Population"));
-
-                // Adds this country (plus details) to the ArrayList.
-                output.add(city);
-            }//end while
-            // Returns the ArrayList.
+            saveToArray(stmt,output, strSelect);
             return output;
         }//end try
         catch (Exception e)
@@ -152,20 +113,8 @@ public class CityFunctions {
                             + "WHERE Continent LIKE 'North America' "
                             + "ORDER BY Population DESC ";
 
-            // Sends the query to the database:
-            ResultSet rset = stmt.executeQuery(strSelect);
-
             // Indicates which columns on the database align to which attributes within "country".
-            while (rset.next()) {
-                City city =  new City();
-                city.setName(rset.getString("city.Name"));
-                city.setCountry(rset.getString("country.Name"));
-                city.setDistrict(rset.getString("District"));
-                city.setPopulation(rset.getInt("city.Population"));
-
-                // Adds this country (plus details) to the ArrayList.
-                output.add(city);
-            }//end while
+            saveToArray(stmt,output, strSelect);
             // Returns the ArrayList.
             return output;
         }//end try
@@ -195,20 +144,8 @@ public class CityFunctions {
                             + "WHERE Continent LIKE 'South America' "
                             + "ORDER BY Population DESC ";
 
-            // Sends the query to the database:
-            ResultSet rset = stmt.executeQuery(strSelect);
-
             // Indicates which columns on the database align to which attributes within "country".
-            while (rset.next()) {
-                City city =  new City();
-                city.setName(rset.getString("city.Name"));
-                city.setCountry(rset.getString("country.Name"));
-                city.setDistrict(rset.getString("District"));
-                city.setPopulation(rset.getInt("city.Population"));
-
-                // Adds this country (plus details) to the ArrayList.
-                output.add(city);
-            }//end while
+            saveToArray(stmt,output, strSelect);
             // Returns the ArrayList.
             return output;
         }//end try
@@ -238,21 +175,8 @@ public class CityFunctions {
                             + "WHERE Continent LIKE 'Africa' "
                             + "ORDER BY Population DESC ";
 
-            // Sends the query to the database:
-            ResultSet rset = stmt.executeQuery(strSelect);
-
             // Indicates which columns on the database align to which attributes within "country".
-            while (rset.next()) {
-                City city =  new City();
-                city.setName(rset.getString("city.Name"));
-                city.setCountry(rset.getString("country.Name"));
-                city.setDistrict(rset.getString("District"));
-                city.setPopulation(rset.getInt("city.Population"));
-
-                // Adds this country (plus details) to the ArrayList.
-                output.add(city);
-            }//end while
-            // Returns the ArrayList.
+            saveToArray(stmt,output, strSelect);
             return output;
         }//end try
         catch (Exception e)
@@ -281,20 +205,9 @@ public class CityFunctions {
                             + "WHERE Continent LIKE 'Oceania' "
                             + "ORDER BY Population DESC ";
 
-            // Sends the query to the database:
-            ResultSet rset = stmt.executeQuery(strSelect);
-
             // Indicates which columns on the database align to which attributes within "country".
-            while (rset.next()) {
-                City city =  new City();
-                city.setName(rset.getString("city.Name"));
-                city.setCountry(rset.getString("country.Name"));
-                city.setDistrict(rset.getString("District"));
-                city.setPopulation(rset.getInt("city.Population"));
+            saveToArray(stmt,output, strSelect);
 
-                // Adds this country (plus details) to the ArrayList.
-                output.add(city);
-            }//end while
             // Returns the ArrayList.
             return output;
         }//end try
@@ -324,20 +237,8 @@ public class CityFunctions {
                             + "WHERE Continent LIKE 'Antarctica' "
                             + "ORDER BY Population DESC ";
 
-            // Sends the query to the database:
-            ResultSet rset = stmt.executeQuery(strSelect);
-
             // Indicates which columns on the database align to which attributes within "country".
-            while (rset.next()) {
-                City city =  new City();
-                city.setName(rset.getString("city.Name"));
-                city.setCountry(rset.getString("country.Name"));
-                city.setDistrict(rset.getString("District"));
-                city.setPopulation(rset.getInt("city.Population"));
-
-                // Adds this country (plus details) to the ArrayList.
-                output.add(city);
-            }//end while
+           saveToArray(stmt,output, strSelect);
             // Returns the ArrayList.
             return output;
         }//end try
@@ -366,20 +267,8 @@ public class CityFunctions {
                             + "ORDER BY country.Region ASC, Population DESC ";
 
             // Sends the query to the database:
-            ResultSet rset = stmt.executeQuery(strSelect);
 
-            Boolean passed = false;
-            // Indicates which columns on the database align to which attributes within "country".
-            while (rset.next()) {
-                City city =  new City();
-                city.setName(rset.getString("city.Name"));
-                city.setCountry(rset.getString("country.Name"));
-                city.setDistrict(rset.getString("District"));
-                city.setPopulation(rset.getInt("city.Population"));
-
-                // Adds this country (plus details) to the ArrayList.
-                output.add(city);
-            }//end while
+            saveToArray( stmt, output, strSelect);
             // Returns the ArrayList.
             return output;
         }//end try
@@ -391,7 +280,7 @@ public class CityFunctions {
         }//catch
     }//end getCityRegion
 
-    private boolean saveToArray (Connection con, Statement stmt, ArrayList<City> output, String strSelect, Boolean passeed)
+    private ArrayList<City> saveToArray (Statement stmt, ArrayList<City> output, String strSelect)
     {
         try {
             // Sends the query to the database:
@@ -408,12 +297,11 @@ public class CityFunctions {
                 // Adds this country (plus details) to the ArrayList.
                 output.add(city);
             }//end while
-            passed = true;
-        }
+        }//end try
         catch (Exception e)
         {
-            passed = false;
-        }
-        return passed; //returns the updated output array
+           //do nothing
+        }//end catch
+        return output; //returns the updated output array
     }//end saveToArray
 }//end CityFunctions
