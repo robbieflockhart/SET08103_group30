@@ -1,6 +1,8 @@
 package set08103_cwk;
 
 import java.sql.*;
+
+import com.sun.org.apache.xpath.internal.operations.Bool;
 import set08103_cwk.Classes.City;
 
 import java.util.ArrayList;
@@ -366,6 +368,7 @@ public class CityFunctions {
             // Sends the query to the database:
             ResultSet rset = stmt.executeQuery(strSelect);
 
+            Boolean passed = false;
             // Indicates which columns on the database align to which attributes within "country".
             while (rset.next()) {
                 City city =  new City();
@@ -388,4 +391,29 @@ public class CityFunctions {
         }//catch
     }//end getCityRegion
 
+    private boolean saveToArray (Connection con, Statement stmt, ArrayList<City> output, String strSelect, Boolean passeed)
+    {
+        try {
+            // Sends the query to the database:
+            ResultSet rset = stmt.executeQuery(strSelect);
+
+            // Indicates which columns on the database align to which attributes within "country".
+            while (rset.next()) {
+                City city = new City();
+                city.setName(rset.getString("city.Name"));
+                city.setCountry(rset.getString("country.Name"));
+                city.setDistrict(rset.getString("District"));
+                city.setPopulation(rset.getInt("city.Population"));
+
+                // Adds this country (plus details) to the ArrayList.
+                output.add(city);
+            }//end while
+            passed = true;
+        }
+        catch (Exception e)
+        {
+            passed = false;
+        }
+        return passed; //returns the updated output array
+    }//end saveToArray
 }//end CityFunctions
