@@ -141,6 +141,37 @@ public class Application
         System.out.println("\n\nPopulation of capital cities: \n");
         df.displayCapitalCity(capitalCity);
 
+        ArrayList<CapitalCity> capCityAsis = capCityFunc.getCapCityAsia(dc.database());
+        ArrayList<CapitalCity> capCityAfrica = capCityFunc.getCapCityAfrica(dc.database());
+        ArrayList<CapitalCity> capCityEurope = capCityFunc.getCapCityEurope(dc.database());
+        ArrayList<CapitalCity> capCityNA = capCityFunc.getCapCityNA(dc.database());
+        ArrayList<CapitalCity> capCitySA = capCityFunc.getCapCitySA(dc.database());
+        ArrayList<CapitalCity> capCityOceania = capCityFunc.getCapCityOceania(dc.database());
+        ArrayList<CapitalCity> capCityAntarctica = capCityFunc.getCapCityAntarctica(dc.database());
+
+        // Capital cities by population in continents
+        System.out.println("\n\nPopulation of capital cities by continent: \n");
+        System.out.println("\n\nPopulation of capital cities in Asia: \n");
+        df.displayCapitalCity(capCityAsis);
+
+        System.out.println("\n\nPopulation of capital cities in Africa: \n");
+        df.displayCapitalCity(capCityAfrica);
+
+        System.out.println("\n\nPopulation of capital cities in Europe: \n");
+        df.displayCapitalCity(capCityEurope);
+
+        System.out.println("\n\nPopulation of capital cities in North America: \n");
+        df.displayCapitalCity(capCityNA);
+
+        System.out.println("\n\nPopulation of capital cities in South America: \n");
+        df.displayCapitalCity(capCitySA);
+
+        System.out.println("\n\nPopulation of capital cities in Oceania: \n");
+        df.displayCapitalCity(capCityOceania);
+
+        System.out.println("\n\nPopulation of capital cities in Antarctica: \n");
+        df.displayCapitalCity(capCityAntarctica);
+
         // Disconnects from the database:
         dc.disconnect();
     }
