@@ -172,6 +172,11 @@ public class Application
         System.out.println("\n\nPopulation of capital cities in Antarctica: \n");
         df.displayCapitalCity(capCityAntarctica);
 
+        ArrayList<CapitalCity> capCityRegion = capCityFunc.getCapCityRegion(dc.database());
+
+        System.out.println("\n\nPopulation of capital cities in order of region: \n");
+        df.displayCapitalCity(capCityRegion);
+
         // Disconnects from the database:
         dc.disconnect();
     }
