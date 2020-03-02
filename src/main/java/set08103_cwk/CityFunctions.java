@@ -2,7 +2,6 @@ package set08103_cwk;
 
 import java.sql.*;
 
-import com.sun.org.apache.xpath.internal.operations.Bool;
 import set08103_cwk.Classes.City;
 
 import java.util.ArrayList;
@@ -25,8 +24,9 @@ public class CityFunctions {
                             + "FROM city JOIN country ON CountryCode=code "
                             + "ORDER BY Population DESC ";
 
-            // Indicates which columns on the database align to which attributes within "country".
-            saveToArray(stmt,output, strSelect);
+            ResultSet rset = stmt.executeQuery(strSelect);
+            // Sends the query to the database:
+            saveToArray(output, rset);
             return output;
         }//end try
         catch (Exception e)
@@ -54,8 +54,9 @@ public class CityFunctions {
                             + "WHERE Continent LIKE 'Asia' "
                             + "ORDER BY Population DESC ";
 
-            // Indicates which columns on the database align to which attributes within "country".
-            saveToArray(stmt,output, strSelect);
+            ResultSet rset = stmt.executeQuery(strSelect);
+            // Sends the query to the database:
+            saveToArray(output, rset);
             return output;
         }//end try
         catch (Exception e)
@@ -83,8 +84,9 @@ public class CityFunctions {
                             + "WHERE Continent LIKE 'Europe' "
                             + "ORDER BY Population DESC ";
 
-            // Indicates which columns on the database align to which attributes within "country".
-            saveToArray(stmt,output, strSelect);
+            ResultSet rset = stmt.executeQuery(strSelect);
+            // Sends the query to the database:
+            saveToArray(output, rset);
             return output;
         }//end try
         catch (Exception e)
@@ -113,8 +115,9 @@ public class CityFunctions {
                             + "WHERE Continent LIKE 'North America' "
                             + "ORDER BY Population DESC ";
 
-            // Indicates which columns on the database align to which attributes within "country".
-            saveToArray(stmt,output, strSelect);
+            ResultSet rset = stmt.executeQuery(strSelect);
+            // Sends the query to the database:
+            saveToArray(output, rset);
             // Returns the ArrayList.
             return output;
         }//end try
@@ -144,8 +147,9 @@ public class CityFunctions {
                             + "WHERE Continent LIKE 'South America' "
                             + "ORDER BY Population DESC ";
 
-            // Indicates which columns on the database align to which attributes within "country".
-            saveToArray(stmt,output, strSelect);
+            ResultSet rset = stmt.executeQuery(strSelect);
+            // Sends the query to the database:
+            saveToArray(output, rset);
             // Returns the ArrayList.
             return output;
         }//end try
@@ -175,8 +179,9 @@ public class CityFunctions {
                             + "WHERE Continent LIKE 'Africa' "
                             + "ORDER BY Population DESC ";
 
-            // Indicates which columns on the database align to which attributes within "country".
-            saveToArray(stmt,output, strSelect);
+            ResultSet rset = stmt.executeQuery(strSelect);
+            // Sends the query to the database:
+            saveToArray(output, rset);
             return output;
         }//end try
         catch (Exception e)
@@ -205,8 +210,9 @@ public class CityFunctions {
                             + "WHERE Continent LIKE 'Oceania' "
                             + "ORDER BY Population DESC ";
 
-            // Indicates which columns on the database align to which attributes within "country".
-            saveToArray(stmt,output, strSelect);
+            ResultSet rset = stmt.executeQuery(strSelect);
+            // Sends the query to the database:
+            saveToArray(output, rset);
 
             // Returns the ArrayList.
             return output;
@@ -237,8 +243,9 @@ public class CityFunctions {
                             + "WHERE Continent LIKE 'Antarctica' "
                             + "ORDER BY Population DESC ";
 
-            // Indicates which columns on the database align to which attributes within "country".
-           saveToArray(stmt,output, strSelect);
+            ResultSet rset = stmt.executeQuery(strSelect);
+            // Sends the query to the database:
+            saveToArray(output, rset);
             // Returns the ArrayList.
             return output;
         }//end try
@@ -266,9 +273,9 @@ public class CityFunctions {
                             + "FROM city JOIN country ON CountryCode=code "
                             + "ORDER BY country.Region ASC, Population DESC ";
 
+            ResultSet rset = stmt.executeQuery(strSelect);
             // Sends the query to the database:
-
-            saveToArray( stmt, output, strSelect);
+            saveToArray(output, rset);
             // Returns the ArrayList.
             return output;
         }//end try
@@ -280,11 +287,10 @@ public class CityFunctions {
         }//catch
     }//end getCityRegion
 
-    private ArrayList<City> saveToArray (Statement stmt, ArrayList<City> output, String strSelect)
+    private ArrayList<City> saveToArray (ArrayList<City> output, ResultSet rset)
     {
         try {
             // Sends the query to the database:
-            ResultSet rset = stmt.executeQuery(strSelect);
 
             // Indicates which columns on the database align to which attributes within "country".
             while (rset.next()) {
