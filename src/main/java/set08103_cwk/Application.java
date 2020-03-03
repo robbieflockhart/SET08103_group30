@@ -141,6 +141,11 @@ public class Application
         System.out.println("\n\nPopulation of capital cities: \n");
         df.displayCapitalCity(capitalCity);
 
+        ArrayList<City> citiesGBdistrictSBpop = cityFunc.getCityDistrict(dc.database());
+
+        System.out.println("\n\nCITIES in the world, GROUPED BY district, SORTED BY population: \n");
+        df.displayCity(citiesGBdistrictSBpop);
+
         // Disconnects from the database:
         dc.disconnect();
     }
