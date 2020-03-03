@@ -103,6 +103,7 @@ public class Application
         ArrayList<City> cityOcean = cityFunc.getCityContOcean(dc.database());
         ArrayList<City> cityAnt = cityFunc.getCityContAnt(dc.database());
         ArrayList<City> cityRegion = cityFunc.getCityRegion(dc.database());
+        ArrayList<City> cityByCountry = cityFunc.getCityByCountry(dc.database());
 
         // Asia
         System.out.println("\n\nPopulation of cities in Asia: \n");
@@ -134,6 +135,9 @@ public class Application
 
         System.out.println("\n\nRegion Feature: \n");
         df.displayCity(cityRegion);
+
+        System.out.println("\n\nCountry Feature: \n");
+        df.displayCity(cityByCountry);
 
         ArrayList<CapitalCity> capitalCity = capCityFunc.getCapitalCity(dc.database());
 
@@ -176,9 +180,6 @@ public class Application
 
         System.out.println("\n\nPopulation of capital cities in order of region: \n");
         df.displayCapitalCity(capCityRegion);
-
-        ArrayList<City> cityByCountry = cityFunc.getCityByCountry(dc.database());
-        df.displayCity(cityByCountry);
 
         // Disconnects from the database:
         dc.disconnect();
