@@ -2,24 +2,6 @@ Product Backlog
 
 First priority
 
-o Create a report that displays all the countries in a region, sorted by largest population to smallest
-
-o Create a report that displays all the cities in the world, sorted by largest population to smallest
-
-o Create a report displaying all of the cities in a continent, sorted by largest population to smallest
-
-o Create a report that displays all the cities in a region, sorted by largest population to smallest
-
-o Create a report that displays all the cities in a country, sorted by largest population to smallest
-
-o Create a report that displays all the cities in a district, sorted by the largest population to smallest
-
-o Create a report that displays all the capital cities in the world, sorted by the largest population to the smallest
-
-o Create a report that displays all the capital cities in the continent, sorted by the largest population to the smallest
-
-o Create a report that displays all the capital cities in the region, sorted by the largest population to the smallest
-
 o Create a report that displays the population of people living in cities, and people not living in cities in each continent
 
 o Create a report that displays the population of people living in cities and people not living in cities in each region
@@ -71,3 +53,21 @@ Completed
 o Create a report that displays all the countries in the world, sorted by largest population to smallest
 
 o Create a report displaying all the countries in a continent, sorted by largest population to smallest
+
+o Create a report that displays all the countries in a region, sorted by largest population to smallest
+
+o Create a report that displays all the cities in the world, sorted by largest population to smallest
+
+o Create a report displaying all of the cities in a continent, sorted by largest population to smallest
+
+o Create a report that displays all the cities in a region, sorted by largest population to smallest
+
+o Create a report that displays all the cities in a country, sorted by largest population to smallest
+
+o Create a report that displays all the cities in a district, sorted by the largest population to smallest
+
+o Create a report that displays all the capital cities in the world, sorted by the largest population to the smallest
+
+o Create a report that displays all the capital cities in the continent, sorted by the largest population to the smallest
+
+o Create a report that displays all the capital cities in the region, sorted by the largest population to the smallest
