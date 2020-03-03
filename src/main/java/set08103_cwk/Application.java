@@ -146,7 +146,7 @@ public class Application
         System.out.println("\n\nCITIES in the world, GROUPED BY district, SORTED BY population: \n");
         df.displayCity(citiesGBdistrictSBpop);
 
-        // Disconnects from the database:
+        // Disconnects from the database :
         dc.disconnect();
     }
 
