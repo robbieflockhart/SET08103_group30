@@ -133,7 +133,7 @@ public class Application
         df.displayCity(cityAnt);
 
         System.out.println("\n\nRegion Feature: \n");
-       df.displayCity(cityRegion);
+        df.displayCity(cityRegion);
 
         ArrayList<CapitalCity> capitalCity = capCityFunc.getCapitalCity(dc.database());
 
@@ -141,19 +141,10 @@ public class Application
         System.out.println("\n\nPopulation of capital cities: \n");
         df.displayCapitalCity(capitalCity);
 
-
-        // Showing all the CITIES in the world, GROUPED BY district, SORTED BY population.
         ArrayList<City> citiesGBdistrictSBpop = cityFunc.getCityDistrict(dc.database());
 
         System.out.println("\n\nCITIES in the world, GROUPED BY district, SORTED BY population: \n");
         df.displayCity(citiesGBdistrictSBpop);
-
-
-        // Calculates the population living in cities and the population not, for each CONTINENT
-        String continent = ("");
-
-
-
 
         // Disconnects from the database:
         dc.disconnect();
