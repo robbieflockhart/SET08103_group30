@@ -29,16 +29,7 @@ public class CapitalCityFunctions {
             // Sends the SQL statement to the database.
             ResultSet rset = stmt.executeQuery(strSelect);
 
-            // Indicates which columns on the database align to which attributes within "country".
-            while (rset.next()) {
-                CapitalCity city =  new CapitalCity();
-                city.setName(rset.getString("city.Name"));
-                city.setCountry(rset.getString("country.Name"));
-                city.setPopulation(rset.getInt("city.Population"));
-
-                // Adds this country (plus details) to the ArrayList.
-                output.add(city);
-            }
+            SaveToArray(output,rset);
             // Returns the ArrayList.
             return output;
         }
@@ -70,16 +61,7 @@ public class CapitalCityFunctions {
             // Sends the SQL statement to the database.
             ResultSet rset = stmt.executeQuery(strSelect);
 
-            // Indicates which columns on the database align to which attributes within "country".
-            while (rset.next()) {
-                CapitalCity city =  new CapitalCity();
-                city.setName(rset.getString("city.Name"));
-                city.setCountry(rset.getString("country.Name"));
-                city.setPopulation(rset.getInt("city.Population"));
-
-                // Adds this country (plus details) to the ArrayList.
-                output.add(city);
-            }
+            SaveToArray(output,rset);
             // Returns the ArrayList.
             return output;
         }
@@ -111,16 +93,7 @@ public class CapitalCityFunctions {
             // Sends the SQL statement to the database.
             ResultSet rset = stmt.executeQuery(strSelect);
 
-            // Indicates which columns on the database align to which attributes within "country".
-            while (rset.next()) {
-                CapitalCity city =  new CapitalCity();
-                city.setName(rset.getString("city.Name"));
-                city.setCountry(rset.getString("country.Name"));
-                city.setPopulation(rset.getInt("city.Population"));
-
-                // Adds this country (plus details) to the ArrayList.
-                output.add(city);
-            }
+            SaveToArray(output,rset);
             // Returns the ArrayList.
             return output;
         }
@@ -152,16 +125,7 @@ public class CapitalCityFunctions {
             // Sends the SQL statement to the database.
             ResultSet rset = stmt.executeQuery(strSelect);
 
-            // Indicates which columns on the database align to which attributes within "country".
-            while (rset.next()) {
-                CapitalCity city =  new CapitalCity();
-                city.setName(rset.getString("city.Name"));
-                city.setCountry(rset.getString("country.Name"));
-                city.setPopulation(rset.getInt("city.Population"));
-
-                // Adds this country (plus details) to the ArrayList.
-                output.add(city);
-            }
+            SaveToArray(output,rset);
             // Returns the ArrayList.
             return output;
         }
@@ -193,16 +157,7 @@ public class CapitalCityFunctions {
             // Sends the SQL statement to the database.
             ResultSet rset = stmt.executeQuery(strSelect);
 
-            // Indicates which columns on the database align to which attributes within "country".
-            while (rset.next()) {
-                CapitalCity city =  new CapitalCity();
-                city.setName(rset.getString("city.Name"));
-                city.setCountry(rset.getString("country.Name"));
-                city.setPopulation(rset.getInt("city.Population"));
-
-                // Adds this country (plus details) to the ArrayList.
-                output.add(city);
-            }
+            SaveToArray(output,rset);
             // Returns the ArrayList.
             return output;
         }
@@ -234,16 +189,7 @@ public class CapitalCityFunctions {
             // Sends the SQL statement to the database.
             ResultSet rset = stmt.executeQuery(strSelect);
 
-            // Indicates which columns on the database align to which attributes within "country".
-            while (rset.next()) {
-                CapitalCity city =  new CapitalCity();
-                city.setName(rset.getString("city.Name"));
-                city.setCountry(rset.getString("country.Name"));
-                city.setPopulation(rset.getInt("city.Population"));
-
-                // Adds this country (plus details) to the ArrayList.
-                output.add(city);
-            }
+            SaveToArray(output,rset);
             // Returns the ArrayList.
             return output;
         }
@@ -276,16 +222,7 @@ public class CapitalCityFunctions {
             ResultSet rset = stmt.executeQuery(strSelect);
 
             // Indicates which columns on the database align to which attributes within "country".
-            while (rset.next()) {
-                CapitalCity city =  new CapitalCity();
-                city.setName(rset.getString("city.Name"));
-                city.setCountry(rset.getString("country.Name"));
-                city.setPopulation(rset.getInt("city.Population"));
-
-                // Adds this country (plus details) to the ArrayList.
-                output.add(city);
-            }
-            // Returns the ArrayList.
+            SaveToArray(output,rset);
             return output;
         }
         catch (Exception e)
@@ -316,16 +253,7 @@ public class CapitalCityFunctions {
             // Sends the SQL statement to the database.
             ResultSet rset = stmt.executeQuery(strSelect);
 
-            // Indicates which columns on the database align to which attributes within "country".
-            while (rset.next()) {
-                CapitalCity city =  new CapitalCity();
-                city.setName(rset.getString("city.Name"));
-                city.setCountry(rset.getString("country.Name"));
-                city.setPopulation(rset.getInt("city.Population"));
-
-                // Adds this country (plus details) to the ArrayList.
-                output.add(city);
-            }
+            SaveToArray(output,rset);
             // Returns the ArrayList.
             return output;
         }
@@ -356,17 +284,7 @@ public class CapitalCityFunctions {
             // Sends the SQL statement to the database.
             ResultSet rset = stmt.executeQuery(strSelect);
 
-            // Indicates which columns on the database align to which attributes within "country".
-            while (rset.next()) {
-                CapitalCity city =  new CapitalCity();
-                city.setName(rset.getString("city.Name"));
-                city.setCountry(rset.getString("country.Name"));
-                city.setPopulation(rset.getInt("city.Population"));
-
-                // Adds this country (plus details) to the ArrayList.
-                output.add(city);
-            }
-            // Returns the ArrayList.
+         SaveToArray(output,rset);
             return output;
         }
         catch (Exception e)
@@ -376,4 +294,27 @@ public class CapitalCityFunctions {
             return null;
         }
     }
+
+    public ArrayList<CapitalCity> SaveToArray (ArrayList<CapitalCity> output, ResultSet rset){
+        try {
+
+            // Indicates which columns on the database align to which attributes within "country".
+            while (rset.next()) {
+                CapitalCity city =  new CapitalCity();
+                city.setName(rset.getString("city.Name"));
+                city.setCountry(rset.getString("country.Name"));
+                city.setPopulation(rset.getInt("city.Population"));
+
+                // Adds this country (plus details) to the ArrayList.
+                output.add(city);
+            }//end while
+            // Adds this country (plus details) to the ArrayList.
+
+        }//end try
+        catch (Exception e)
+        {
+            //do nothing
+        }//end catch
+        return output;
+    }//end SaveToArray
 }

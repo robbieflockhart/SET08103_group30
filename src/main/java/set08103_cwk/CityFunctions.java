@@ -8,10 +8,8 @@ import java.util.ArrayList;
 
 public class CityFunctions {
 
-    public ArrayList<City> getCity(Connection con)
-    {
-        try
-        {
+    public ArrayList<City> getCity(Connection con) {
+        try {
             // Creates an SQL statement.
             Statement stmt = con.createStatement();
 
@@ -29,16 +27,14 @@ public class CityFunctions {
             saveToArray(output, rset);
             return output;
         }//end try
-        catch (Exception e)
-        {
+        catch (Exception e) {
             System.out.println(e.getMessage());
             System.out.println("Failed to get information from database (City); check connection?");
             return null;
         }//end catch
     }//end getCity
 
-    public ArrayList<City> getCityContAsia(Connection con)
-    {
+    public ArrayList<City> getCityContAsia(Connection con) {
         try {
 
             // Create an SQL statement
@@ -59,8 +55,7 @@ public class CityFunctions {
             saveToArray(output, rset);
             return output;
         }//end try
-        catch (Exception e)
-        {
+        catch (Exception e) {
             System.out.println(e.getMessage());
             System.out.println("Failed to get information from database (Asia); check connection?");
             return null;
@@ -68,10 +63,8 @@ public class CityFunctions {
     }//endCityContAsia
 
     // Displays all details for Continent of Europe and returns Country. **************************
-    public ArrayList<City> getCityContEurope(Connection con)
-    {
-        try
-        {
+    public ArrayList<City> getCityContEurope(Connection con) {
+        try {
             // Creates an SQL statement.
             Statement stmt = con.createStatement();
 
@@ -89,8 +82,7 @@ public class CityFunctions {
             saveToArray(output, rset);
             return output;
         }//end try
-        catch (Exception e)
-        {
+        catch (Exception e) {
             System.out.println(e.getMessage());
             System.out.println("Failed to get information from database (Europe); check connection?");
             return null;
@@ -98,10 +90,8 @@ public class CityFunctions {
     }//end getCityContEurope
 
     // Displays all details for Continent of N America and returns Country. **************************
-    public ArrayList<City> getCityContNorthAmerica(Connection con)
-    {
-        try
-        {
+    public ArrayList<City> getCityContNorthAmerica(Connection con) {
+        try {
             // Create an SQL statement
             Statement stmt = con.createStatement();
             // Create string for SQL statement
@@ -121,8 +111,7 @@ public class CityFunctions {
             // Returns the ArrayList.
             return output;
         }//end try
-        catch (Exception e)
-        {
+        catch (Exception e) {
             System.out.println(e.getMessage());
             System.out.println("Failed to get information from database (N America); check connection?");
             return null;
@@ -130,10 +119,8 @@ public class CityFunctions {
     }//end getCityContNorthAmerica
 
     // Displays all details for Continent of S America and returns Country. **************************
-    public ArrayList<City> getCityContSouthAmerica(Connection con)
-    {
-        try
-        {
+    public ArrayList<City> getCityContSouthAmerica(Connection con) {
+        try {
             // Creates an SQL statement.
             Statement stmt = con.createStatement();
 
@@ -153,8 +140,7 @@ public class CityFunctions {
             // Returns the ArrayList.
             return output;
         }//end try
-        catch (Exception e)
-        {
+        catch (Exception e) {
             System.out.println(e.getMessage());
             System.out.println("Failed to get information from database (S America); check connection?");
             return null;
@@ -163,8 +149,7 @@ public class CityFunctions {
 
 
     // Displays all details for Continent of Africa and returns Country. **************************
-    public ArrayList<City> getCityContAfrica(Connection con)
-    {
+    public ArrayList<City> getCityContAfrica(Connection con) {
         try {
             // Creates an SQL statement.
             Statement stmt = con.createStatement();
@@ -184,8 +169,7 @@ public class CityFunctions {
             saveToArray(output, rset);
             return output;
         }//end try
-        catch (Exception e)
-        {
+        catch (Exception e) {
             System.out.println(e.getMessage());
             System.out.println("Failed to get information from database (Africa); check connection?");
             return null;
@@ -193,10 +177,8 @@ public class CityFunctions {
     }//end getCityContAfrica
 
     // Displays all details for Continent of Oceania and returns Country. **************************
-    public ArrayList<City> getCityContOcean(Connection con)
-    {
-        try
-        {
+    public ArrayList<City> getCityContOcean(Connection con) {
+        try {
             // Creates an SQL statement.
             Statement stmt = con.createStatement();
 
@@ -217,8 +199,7 @@ public class CityFunctions {
             // Returns the ArrayList.
             return output;
         }//end try
-        catch (Exception e)
-        {
+        catch (Exception e) {
             System.out.println(e.getMessage());
             System.out.println("Failed to get information from database (Oceania); check connection?\n");
             return null;
@@ -226,10 +207,8 @@ public class CityFunctions {
     }//end getCityContOcean
 
     // Displays all details for Continent of Antarctica and returns Country. **************************
-    public ArrayList<City> getCityContAnt(Connection con)
-    {
-        try
-        {
+    public ArrayList<City> getCityContAnt(Connection con) {
+        try {
             // Creates an SQL statement.
             Statement stmt = con.createStatement();
 
@@ -249,18 +228,15 @@ public class CityFunctions {
             // Returns the ArrayList.
             return output;
         }//end try
-        catch (Exception e)
-        {
+        catch (Exception e) {
             System.out.println(e.getMessage());
             System.out.println("Failed to get information from database (Antarctica); check connection?\n");
             return null;
         }//end catch
     }//end getCityContAnt
 
-    public ArrayList<City> getCityRegion(Connection con)
-    {
-        try
-        {
+    public ArrayList<City> getCityRegion(Connection con) {
+        try {
             // Creates an SQL statement.
             Statement stmt = con.createStatement();
 
@@ -279,16 +255,79 @@ public class CityFunctions {
             // Returns the ArrayList.
             return output;
         }//end try
-        catch (Exception e)
-        {
+        catch (Exception e) {
             System.out.println(e.getMessage());
             System.out.println("Failed to get information from database (Antarctica); check connection?\n");
             return null;
         }//catch
     }//end getCityRegion
 
-    private ArrayList<City> saveToArray (ArrayList<City> output, ResultSet rset)
-    {
+
+    //end getCityRegion
+
+    public ArrayList<City> getCityByCountry(Connection con) {
+
+        try {
+            // Creates an SQL statement.
+            Statement stmt = con.createStatement();
+
+            // Creates an array list to store the data.
+            ArrayList<City> output = new ArrayList<City>();
+
+            // Creates an SQL statement, stored as a STRING.
+            String strSelect =
+                    "SELECT city.Name, country.Name, District, city.Population "
+                            + "FROM city JOIN country ON CountryCode=code "
+                            + "ORDER BY country.Name ASC, Population DESC ";
+
+            // Sends the query to the database:
+            ResultSet rset = stmt.executeQuery(strSelect);
+            // Sends the query to the database:
+            saveToArray(output, rset);
+            // Returns the ArrayList.
+            return output;
+        }//end try
+        catch (Exception e) {
+            System.out.println(e.getMessage());
+            System.out.println("Failed to get information from database (Antarctica); check connection?\n");
+            return null;
+        }//catch
+
+    }//end getCityByCountryFunction
+
+    // Function to show all the CITIES in the world, GROUPED BY district, SORTED BY population.
+    public ArrayList<City> getCityDistrict(Connection con) {
+        try {
+
+            // Create an SQL statement
+            Statement stmt = con.createStatement();
+
+            // Creates an array list to store the data
+            ArrayList<City> output = new ArrayList<>();
+
+            // Creates an SQL statement, stored as a STRING.
+            String strSelect =
+                    "SELECT city.Name, country.Name, District, city.Population "
+                            + "FROM city JOIN country ON CountryCode=code "
+                            + "ORDER BY city.District ASC, Population DESC ";
+
+            // Sends the query to the database:
+            ResultSet rset = stmt.executeQuery(strSelect);
+            // Sends the query to the database:
+            saveToArray(output, rset);
+            // Returns the ArrayList.
+            return output;
+        }//end try
+        catch (Exception e) {
+            System.out.println(e.getMessage());
+            System.out.println("Failed to get information from database (Asia); check connection?");
+            return null;
+        }//end catch
+    }//endGetCityDistrict
+//end CityFunctions
+
+
+    private ArrayList<City> saveToArray(ArrayList<City> output, ResultSet rset) {
         try {
             // Sends the query to the database:
 
@@ -305,98 +344,10 @@ public class CityFunctions {
             }//end while
 
         }//end try
-        catch (Exception e)
-        {
+        catch (Exception e) {
             //do nothing
         }//end catch
         return output; //returns the updated output array
-    }//end saveToArray
-    // catch
-
-
-    //end getCityRegion
-
-    public ArrayList<City> getCityByCountry(Connection con){
-
-        try
-        {
-            // Creates an SQL statement.
-            Statement stmt = con.createStatement();
-
-            // Creates an array list to store the data.
-            ArrayList<City> output = new ArrayList<City>();
-
-            // Creates an SQL statement, stored as a STRING.
-            String strSelect =
-                    "SELECT city.Name, country.Name, District, city.Population "
-                            + "FROM city JOIN country ON CountryCode=code "
-                            + "ORDER BY country.Name ASC, Population DESC ";
-
-            // Sends the query to the database:
-            ResultSet rset = stmt.executeQuery(strSelect);
-
-            // Indicates which columns on the database align to which attributes within "country".
-            while (rset.next()) {
-                City city =  new City();
-                city.setName(rset.getString("city.Name"));
-                city.setCountry(rset.getString("country.Name"));
-                city.setDistrict(rset.getString("District"));
-                city.setPopulation(rset.getInt("city.Population"));
-
-                // Adds this country (plus details) to the ArrayList.
-                output.add(city);
-            }//end while
-            // Returns the ArrayList.
-            return output;
-        }//end try
-        catch (Exception e)
-        {
-            System.out.println(e.getMessage());
-            System.out.println("Failed to get information from database (Antarctica); check connection?\n");
-            return null;
-        }//catch
-
-    }//end getCityByCountryFunction
-
-    // Function to show all the CITIES in the world, GROUPED BY district, SORTED BY population.
-    public ArrayList<City> getCityDistrict(Connection con)
-    {
-        try {
-
-            // Create an SQL statement
-            Statement stmt = con.createStatement();
-
-            // Creates an array list to store the data
-            ArrayList<City> output = new ArrayList<City>();
-
-            // Creates an SQL statement, stored as a STRING.
-            String strSelect =
-                    "SELECT city.Name, country.Name, District, city.Population "
-                            + "FROM city JOIN country ON CountryCode=code "
-                            + "ORDER BY city.District ASC, Population DESC ";
-
-            // Sends the query to the database:
-            ResultSet rset = stmt.executeQuery(strSelect);
-
-            // Indicates which columns on the database align to which attributes within "country".
-            while (rset.next()) {
-                City city =  new City();
-                city.setName(rset.getString("Name"));
-                city.setCountry(rset.getString("country.Name"));
-                city.setDistrict(rset.getString("District"));
-                city.setPopulation(rset.getInt("Population"));
-
-                // Adds this country (plus details) to the ArrayList.
-                output.add(city);
-            }//end while
-            // Returns the ArrayList.
-            return output;
-        }//end try
-        catch (Exception e)
-        {
-            System.out.println(e.getMessage());
-            System.out.println("Failed to get information from database (Asia); check connection?");
-            return null;
-        }//end catch
-    }//endGetCityDistrict
-}//end CityFunctions
+    } //end saveToArray
+// catch
+}
