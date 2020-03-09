@@ -17,7 +17,7 @@ public class CapitalCityFunctions {
             Statement stmt = con.createStatement();
 
             // Creates an array list to store the data.
-            ArrayList<CapitalCity> output = new ArrayList<CapitalCity>();
+            ArrayList<CapitalCity> output = new ArrayList<>();
 
             // Creates an SQL statement, stored as a STRING.
             String strSelect =
@@ -49,7 +49,7 @@ public class CapitalCityFunctions {
             Statement stmt = con.createStatement();
 
             // Creates an array list to store the data.
-            ArrayList<CapitalCity> output = new ArrayList<CapitalCity>();
+            ArrayList<CapitalCity> output = new ArrayList<>();
 
             // Creates an SQL statement, stored as a STRING.
             String strSelect =
@@ -81,7 +81,7 @@ public class CapitalCityFunctions {
             Statement stmt = con.createStatement();
 
             // Creates an array list to store the data.
-            ArrayList<CapitalCity> output = new ArrayList<CapitalCity>();
+            ArrayList<CapitalCity> output = new ArrayList<>();
 
             // Creates an SQL statement, stored as a STRING.
             String strSelect =
@@ -113,7 +113,7 @@ public class CapitalCityFunctions {
             Statement stmt = con.createStatement();
 
             // Creates an array list to store the data.
-            ArrayList<CapitalCity> output = new ArrayList<CapitalCity>();
+            ArrayList<CapitalCity> output = new ArrayList<>();
 
             // Creates an SQL statement, stored as a STRING.
             String strSelect =
@@ -145,7 +145,7 @@ public class CapitalCityFunctions {
             Statement stmt = con.createStatement();
 
             // Creates an array list to store the data.
-            ArrayList<CapitalCity> output = new ArrayList<CapitalCity>();
+            ArrayList<CapitalCity> output = new ArrayList<>();
 
             // Creates an SQL statement, stored as a STRING.
             String strSelect =
@@ -177,7 +177,7 @@ public class CapitalCityFunctions {
             Statement stmt = con.createStatement();
 
             // Creates an array list to store the data.
-            ArrayList<CapitalCity> output = new ArrayList<CapitalCity>();
+            ArrayList<CapitalCity> output = new ArrayList<>();
 
             // Creates an SQL statement, stored as a STRING.
             String strSelect =
@@ -209,7 +209,7 @@ public class CapitalCityFunctions {
             Statement stmt = con.createStatement();
 
             // Creates an array list to store the data.
-            ArrayList<CapitalCity> output = new ArrayList<CapitalCity>();
+            ArrayList<CapitalCity> output = new ArrayList<>();
 
             // Creates an SQL statement, stored as a STRING.
             String strSelect =
@@ -241,7 +241,7 @@ public class CapitalCityFunctions {
             Statement stmt = con.createStatement();
 
             // Creates an array list to store the data.
-            ArrayList<CapitalCity> output = new ArrayList<CapitalCity>();
+            ArrayList<CapitalCity> output = new ArrayList<>();
 
             // Creates an SQL statement, stored as a STRING.
             String strSelect =
@@ -273,7 +273,7 @@ public class CapitalCityFunctions {
             Statement stmt = con.createStatement();
 
             // Creates an array list to store the data.
-            ArrayList<CapitalCity> output = new ArrayList<CapitalCity>();
+            ArrayList<CapitalCity> output = new ArrayList<>();
 
             // Creates an SQL statement, stored as a STRING.
             String strSelect =

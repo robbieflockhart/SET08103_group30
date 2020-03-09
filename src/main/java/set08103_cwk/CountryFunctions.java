@@ -15,7 +15,7 @@ public class CountryFunctions {
             Statement stmt = con.createStatement();
 
             // Creates an array list to store the data.
-            ArrayList<Country> output = new ArrayList<Country>();
+            ArrayList<Country> output = new ArrayList<>();
 
             // Creates an SQL statement, stored as a STRING.
             String strSelect =
@@ -48,7 +48,7 @@ public class CountryFunctions {
             Statement stmt = con.createStatement();
 
             // Creates an array list to store the data
-            ArrayList<Country> output = new ArrayList<Country>();
+            ArrayList<Country> output = new ArrayList<>();
 
             // Creates an SQL statement, stored as a STRING.
             String strSelect =
@@ -81,7 +81,7 @@ public class CountryFunctions {
             // Creates an SQL statement.
             Statement stmt = con.createStatement();
 
-            ArrayList<Country> output = new ArrayList<Country>();
+            ArrayList<Country> output = new ArrayList<>();
 
             // Creates an SQL statement, stored as a STRING.
             String strSelect =
@@ -115,7 +115,7 @@ public class CountryFunctions {
             Statement stmt = con.createStatement();
             // Create string for SQL statement
 
-            ArrayList<Country> output = new ArrayList<Country>();
+            ArrayList<Country> output = new ArrayList<>();
 
             String strSelect =
                     "SELECT Name, Population, Code, Continent, Region, Capital "
@@ -148,7 +148,7 @@ public class CountryFunctions {
             Statement stmt = con.createStatement();
 
             // Creates an array list to store the data.
-            ArrayList<Country> output = new ArrayList<Country>();
+            ArrayList<Country> output = new ArrayList<>();
 
             // Creates an SQL statement, stored as a STRING.
             String strSelect =
@@ -182,7 +182,7 @@ public class CountryFunctions {
             Statement stmt = con.createStatement();
 
             // Creates an array list to store the data.
-            ArrayList<Country> output = new ArrayList<Country>();
+            ArrayList<Country> output = new ArrayList<>();
 
             // Creates an SQL statement, stored as a STRING.
             String strSelect =
@@ -215,7 +215,7 @@ public class CountryFunctions {
             Statement stmt = con.createStatement();
 
             // Creates an array list to store the data.
-            ArrayList<Country> output = new ArrayList<Country>();
+            ArrayList<Country> output = new ArrayList<>();
 
             // Creates an SQL statement, stored as a STRING.
             String strSelect =
@@ -247,7 +247,7 @@ public class CountryFunctions {
             Statement stmt = con.createStatement();
 
             // Creates an array list to store the data.
-            ArrayList<Country> output = new ArrayList<Country>();
+            ArrayList<Country> output = new ArrayList<>();
 
             // Creates an SQL statement, stored as a STRING.
             String strSelect =
@@ -279,7 +279,7 @@ public class CountryFunctions {
             Statement stmt = con.createStatement();
 
             // Creates an array list to store the data.
-            ArrayList<Country> output = new ArrayList<Country>();
+            ArrayList<Country> output = new ArrayList<>();
 
             // Creates an SQL statement, stored as a STRING.
             String strSelect =
