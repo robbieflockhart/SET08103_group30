@@ -27,18 +27,7 @@ public class CountryFunctions {
             ResultSet rset = stmt.executeQuery(strSelect);
 
             // Indicates which columns on the database align to which attributes within "country".
-            while (rset.next()) {
-                Country country =  new Country();
-                country.setCode(rset.getString("Code"));
-                country.setName(rset.getString("Name"));
-                country.setContinent(rset.getString("Continent"));
-                country.setRegion(rset.getString("Region"));
-                country.setPopulation(rset.getInt("Population"));
-                country.setCapital(rset.getString("Capital"));
-
-                // Adds this country (plus details) to the ArrayList.
-                output.add(country);
-            }
+            SaveToArray(output, rset);
             // Returns the ArrayList.
             return output;
         }
@@ -72,18 +61,7 @@ public class CountryFunctions {
             ResultSet rset = stmt.executeQuery(strSelect);
 
             // Indicates which columns on the database align to which attributes within "country".
-            while (rset.next()) {
-                Country country =  new Country();
-                country.setCode(rset.getString("Code"));
-                country.setName(rset.getString("Name"));
-                country.setContinent(rset.getString("Continent"));
-                country.setRegion(rset.getString("Region"));
-                country.setPopulation(rset.getInt("Population"));
-                country.setCapital(rset.getString("Capital"));
-
-                // Adds this country (plus details) to the ArrayList.
-                output.add(country);
-            }
+            SaveToArray(output, rset);
             // Returns the ArrayList.
             return output;
         }
@@ -116,18 +94,7 @@ public class CountryFunctions {
             ResultSet rset = stmt.executeQuery(strSelect);
 
             // Indicates which columns on the database align to which attributes within "country".
-            while (rset.next()) {
-                Country country =  new Country();
-                country.setCode(rset.getString("Code"));
-                country.setName(rset.getString("Name"));
-                country.setContinent(rset.getString("Continent"));
-                country.setRegion(rset.getString("Region"));
-                country.setPopulation(rset.getInt("Population"));
-                country.setCapital(rset.getString("Capital"));
-
-                // Adds this country (plus details) to the ArrayList.
-                output.add(country);
-            }
+            SaveToArray(output, rset);
             // Returns the ArrayList.
             return output;
         }
@@ -160,18 +127,7 @@ public class CountryFunctions {
 
             // Return new employee if valid.
             // Check one is returned
-            while (rset.next()) {
-                Country country =  new Country();
-                country.setCode(rset.getString("Code"));
-                country.setName(rset.getString("Name"));
-                country.setContinent(rset.getString("Continent"));
-                country.setRegion(rset.getString("Region"));
-                country.setPopulation(rset.getInt("Population"));
-                country.setCapital(rset.getString("Capital"));
-
-                // Adds this country (plus details) to the ArrayList.
-                output.add(country);
-            }
+            SaveToArray(output, rset);
             // Returns the ArrayList.
             return output;
         }
@@ -205,18 +161,7 @@ public class CountryFunctions {
             ResultSet rset = stmt.executeQuery(strSelect);
 
             // Indicates which columns on the database align to which attributes within "country".
-            while (rset.next()) {
-                Country country =  new Country();
-                country.setCode(rset.getString("Code"));
-                country.setName(rset.getString("Name"));
-                country.setContinent(rset.getString("Continent"));
-                country.setRegion(rset.getString("Region"));
-                country.setPopulation(rset.getInt("Population"));
-                country.setCapital(rset.getString("Capital"));
-
-                // Adds this country (plus details) to the ArrayList.
-                output.add(country);
-            }
+            SaveToArray(output, rset);
             // Returns the ArrayList.
             return output;
         }
@@ -250,18 +195,7 @@ public class CountryFunctions {
             ResultSet rset = stmt.executeQuery(strSelect);
 
             // Indicates which columns on the database align to which attributes within "country".
-            while (rset.next()) {
-                Country country =  new Country();
-                country.setCode(rset.getString("Code"));
-                country.setName(rset.getString("Name"));
-                country.setContinent(rset.getString("Continent"));
-                country.setRegion(rset.getString("Region"));
-                country.setPopulation(rset.getInt("Population"));
-                country.setCapital(rset.getString("Capital"));
-
-                // Adds this country (plus details) to the ArrayList.
-                output.add(country);
-            }
+            SaveToArray(output, rset);
             // Returns the ArrayList.
             return output;
         }
@@ -289,33 +223,20 @@ public class CountryFunctions {
                             + "FROM country "
                             + "WHERE Continent LIKE 'Oceania' "
                             + "ORDER BY Population DESC ";
-
             // Sends the SQL statement to the database.
             ResultSet rset = stmt.executeQuery(strSelect);
 
-            // Indicates which columns on the database align to which attributes within "country".
-            while (rset.next()) {
-                Country country =  new Country();
-                country.setCode(rset.getString("Code"));
-                country.setName(rset.getString("Name"));
-                country.setContinent(rset.getString("Continent"));
-                country.setRegion(rset.getString("Region"));
-                country.setPopulation(rset.getInt("Population"));
-                country.setCapital(rset.getString("Capital"));
-
-                // Adds this country (plus details) to the ArrayList.
-                output.add(country);
-            }
-            // Returns the ArrayList.
+            SaveToArray(output, rset);
             return output;
-        }
+
+        }//end try
         catch (Exception e)
         {
             System.out.println(e.getMessage());
             System.out.println("Failed to get information from database (Oceania); check connection?\n");
             return null;
-        }
-    }
+        }//end catch
+    }//end getContOcean
 
     // Displays all details for Continent of Antarctica and returns Country. **************************
     public ArrayList<Country> getContAnt(Connection con)
@@ -338,19 +259,7 @@ public class CountryFunctions {
             // Sends the SQL statement to the database.
             ResultSet rset = stmt.executeQuery(strSelect);
 
-            // Indicates which columns on the database align to which attributes within "country".
-            while (rset.next()) {
-                Country country =  new Country();
-                country.setCode(rset.getString("Code"));
-                country.setName(rset.getString("Name"));
-                country.setContinent(rset.getString("Continent"));
-                country.setRegion(rset.getString("Region"));
-                country.setPopulation(rset.getInt("Population"));
-                country.setCapital(rset.getString("Capital"));
-
-                // Adds this country (plus details) to the ArrayList.
-                output.add(country);
-            }
+            SaveToArray(output, rset);
             // Returns the ArrayList.
             return output;
         }
@@ -381,19 +290,7 @@ public class CountryFunctions {
             // Sends the SQL statement to the database.
             ResultSet rset = stmt.executeQuery(strSelect);
 
-            // Indicates which columns on the database align to which attributes within "country".
-            while (rset.next()) {
-                Country country =  new Country();
-                country.setCode(rset.getString("Code"));
-                country.setName(rset.getString("Name"));
-                country.setContinent(rset.getString("Continent"));
-                country.setRegion(rset.getString("Region"));
-                country.setPopulation(rset.getInt("Population"));
-                country.setCapital(rset.getString("Capital"));
 
-                // Adds this country (plus details) to the ArrayList.
-                output.add(country);
-            }
             // Returns the ArrayList.
             return output;
         }
@@ -404,4 +301,28 @@ public class CountryFunctions {
             return null;
         }
     }
+
+    public ArrayList<Country> SaveToArray (ArrayList<Country> output, ResultSet rset){
+        try {
+
+         // Indicates which columns on the database align to which attributes within "country".
+            while (rset.next()) {
+                 Country country = new Country();
+                 country.setCode(rset.getString("Code"));
+                country.setName(rset.getString("Name"));
+                country.setContinent(rset.getString("Continent"));
+                country.setRegion(rset.getString("Region"));
+                country.setPopulation(rset.getInt("Population"));
+                country.setCapital(rset.getString("Capital"));
+                output.add(country);
+            }//end while
+            // Adds this country (plus details) to the ArrayList.
+
+        }//end try
+        catch (Exception e)
+        {
+            //do nothing
+        }//end catch
+        return output;
+    }//end SaveToArray
 }
