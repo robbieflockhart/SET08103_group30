@@ -3,11 +3,11 @@ package set08103_cwk.Classes;
 public class Population {
 
     private String name;
-    private int population;
-    private int cityPopulation;
+    private long population;
+    private long cityPopulation;
     private double cityPopulationPercent;
-    private int notCityPopulation;
-    private double cityPopulationPercentPercent;
+    private long notCityPopulation;
+    private double nonCityPopulationPercent;
 
     public String getName() {
         return name;
@@ -17,19 +17,19 @@ public class Population {
         this.name = name;
     }
 
-    public int getPopulation() {
+    public long getPopulation() {
         return population;
     }
 
-    public void setPopulation(int population) {
+    public void setPopulation(long population) {
         this.population = population;
     }
 
-    public int getCityPopulation() {
+    public long getCityPopulation() {
         return cityPopulation;
     }
 
-    public void setCityPopulation(int cityPopulation) {
+    public void setCityPopulation(long cityPopulation) {
         this.cityPopulation = cityPopulation;
     }
 
@@ -41,25 +41,25 @@ public class Population {
         this.cityPopulationPercent = cityPopulationPercent;
     }
 
-    public int getNotCityPopulation() {
+    public long getNotCityPopulation() {
         return notCityPopulation;
     }
 
-    public void setNotCityPopulation(int notCityPopulation) {
+    public void setNotCityPopulation(long notCityPopulation) {
         this.notCityPopulation = notCityPopulation;
     }
 
-    public double getCityPopulationPercentPercent() {
-        return cityPopulationPercentPercent;
+    public double getNonCityPopulationPercent() {
+        return nonCityPopulationPercent;
     }
 
-    public void setCityPopulationPercentPercent(double cityPopulationPercentPercent) {
-        this.cityPopulationPercentPercent = cityPopulationPercentPercent;
+    public void setNonCityPopulationPercent(double nonCityPopulationPercent) {
+        this.nonCityPopulationPercent = nonCityPopulationPercent;
     }
-
 
     @Override
     public String toString() {
-        return name + " " + population + " " + cityPopulation + " " + cityPopulationPercent + " " + notCityPopulation + " " + cityPopulationPercentPercent + "\n";
+        return name + " " + population + " " + cityPopulation + " " + cityPopulationPercent + " " + notCityPopulation + " " + nonCityPopulationPercent  +"\n";
     }
+
 }
