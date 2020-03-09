@@ -303,11 +303,100 @@ public class CityFunctions {
                 // Adds this country (plus details) to the ArrayList.
                 output.add(city);
             }//end while
+
         }//end try
         catch (Exception e)
         {
-           //do nothing
+            //do nothing
         }//end catch
         return output; //returns the updated output array
     }//end saveToArray
+    // catch
+
+
+    //end getCityRegion
+
+    public ArrayList<City> getCityByCountry(Connection con){
+
+        try
+        {
+            // Creates an SQL statement.
+            Statement stmt = con.createStatement();
+
+            // Creates an array list to store the data.
+            ArrayList<City> output = new ArrayList<City>();
+
+            // Creates an SQL statement, stored as a STRING.
+            String strSelect =
+                    "SELECT city.Name, country.Name, District, city.Population "
+                            + "FROM city JOIN country ON CountryCode=code "
+                            + "ORDER BY country.Name ASC, Population DESC ";
+
+            // Sends the query to the database:
+            ResultSet rset = stmt.executeQuery(strSelect);
+
+            // Indicates which columns on the database align to which attributes within "country".
+            while (rset.next()) {
+                City city =  new City();
+                city.setName(rset.getString("city.Name"));
+                city.setCountry(rset.getString("country.Name"));
+                city.setDistrict(rset.getString("District"));
+                city.setPopulation(rset.getInt("city.Population"));
+
+                // Adds this country (plus details) to the ArrayList.
+                output.add(city);
+            }//end while
+            // Returns the ArrayList.
+            return output;
+        }//end try
+        catch (Exception e)
+        {
+            System.out.println(e.getMessage());
+            System.out.println("Failed to get information from database (Antarctica); check connection?\n");
+            return null;
+        }//catch
+
+    }//end getCityByCountryFunction
+
+    // Function to show all the CITIES in the world, GROUPED BY district, SORTED BY population.
+    public ArrayList<City> getCityDistrict(Connection con)
+    {
+        try {
+
+            // Create an SQL statement
+            Statement stmt = con.createStatement();
+
+            // Creates an array list to store the data
+            ArrayList<City> output = new ArrayList<City>();
+
+            // Creates an SQL statement, stored as a STRING.
+            String strSelect =
+                    "SELECT city.Name, country.Name, District, city.Population "
+                            + "FROM city JOIN country ON CountryCode=code "
+                            + "ORDER BY city.District ASC, Population DESC ";
+
+            // Sends the query to the database:
+            ResultSet rset = stmt.executeQuery(strSelect);
+
+            // Indicates which columns on the database align to which attributes within "country".
+            while (rset.next()) {
+                City city =  new City();
+                city.setName(rset.getString("Name"));
+                city.setCountry(rset.getString("country.Name"));
+                city.setDistrict(rset.getString("District"));
+                city.setPopulation(rset.getInt("Population"));
+
+                // Adds this country (plus details) to the ArrayList.
+                output.add(city);
+            }//end while
+            // Returns the ArrayList.
+            return output;
+        }//end try
+        catch (Exception e)
+        {
+            System.out.println(e.getMessage());
+            System.out.println("Failed to get information from database (Asia); check connection?");
+            return null;
+        }//end catch
+    }//endGetCityDistrict
 }//end CityFunctions
