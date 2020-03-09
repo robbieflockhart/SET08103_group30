@@ -13,30 +13,23 @@ public class PopulationFunctions
     {
         ArrayList<Continent> output = new ArrayList<Continent>();
 
+        long cityPopAsia = 0, cityPopEurope = 0, cityPopNorthAmerica = 0, cityPopAfrica = 0, cityPopOceania = 0, cityPopAntarctica = 0, cityPopSouthAmerica = 0;
+
         try
         {
-
-            long popAsia = 0, popEurope = 0, popNorthAmerica = 0, popAfrica = 0, popOceania = 0, popAntarctica = 0, popSouthAmerica = 0;
             String thisContinent = ("");
 
             // Creates an SQL statement.
             Statement stmt = con.createStatement();
 
-            // Creates an array list to store the data.
-            //ArrayList<Continent> output = new ArrayList<Continent>();
-
             // Creates an SQL statement, stored as a STRING.
             String strSelect =
-                    //"SELECT city.Name, country.Name, District, city.Population "
-                    //"SELECT city.Name, country.continent, country.Population, city.population "
                     "SELECT country.name, country.population, country.continent, city.id, city.population "
                             + "FROM city JOIN country ON CountryCode=code "
                             + "ORDER BY country.population DESC ";
 
             // Sends the SQL statement to the database.
             ResultSet rset = stmt.executeQuery(strSelect);
-
-
 
             // Indicates which columns on the database align to which attributes within "country".
             while (rset.next()) {
@@ -50,52 +43,39 @@ public class PopulationFunctions
                 continent.setCityID(rset.getInt("city.id"));
                 continent.setCityPopulation(rset.getInt("city.population"));
 
-                //System.out.println("thisContinent = '" + thisContinent + "', this city population = '" + (rset.getLong("city.population")) + "'");
-
                 if (thisContinent.contains("Asia"))
                 {
-                    popAsia += (rset.getLong("city.population"));
+                    cityPopAsia += (rset.getLong("city.population"));
                 }
                 else if (thisContinent.contains("Europe"))
                 {
-                    popEurope += (rset.getLong("city.population"));
+                    cityPopEurope += (rset.getLong("city.population"));
                 }
                 else if (thisContinent.contains("North America"))
                 {
-                    popNorthAmerica += (rset.getLong("city.population"));
+                    cityPopNorthAmerica += (rset.getLong("city.population"));
                 }
                 else if (thisContinent.contains("South America"))
                 {
-                    popSouthAmerica += (rset.getLong("city.population"));
+                    cityPopSouthAmerica += (rset.getLong("city.population"));
                 }
                 else if (thisContinent.contains("Africa"))
                 {
-                    popAfrica += (rset.getLong("city.population"));
+                    cityPopAfrica += (rset.getLong("city.population"));
                 }
                 else if (thisContinent.contains("Oceania"))
                 {
-                    popOceania += (rset.getLong("city.population"));
+                    cityPopOceania += (rset.getLong("city.population"));
                 }
                 else if (thisContinent.contains("Antarctica"))
                 {
-                    popAntarctica += (rset.getLong("city.population"));
+                    cityPopAntarctica += (rset.getLong("city.population"));
                 }
 
                 // Adds this country (plus details) to the ArrayList.
-                //System.out.println(continent.toString());
                 output.add(continent);
             }//end while
-            // Returns the ArrayList.
-            System.out.println("Total city population of Asia = " + popAsia);
-            System.out.println("Total city population of Europe = " + popEurope);
-            System.out.println("Total city population of North America = " + popNorthAmerica);
-            System.out.println("Total city population of South America = " + popSouthAmerica);
-            System.out.println("Total city population of Africa = " + popAfrica);
-            System.out.println("Total city population of Oceania = " + popOceania);
-            System.out.println("Total city population of Antarctica = " + popAntarctica);
-            System.out.println("Maximum value of long = " + Long.MAX_VALUE);
 
-            //return output;
         }//end try
         catch (Exception e)
         {
@@ -105,10 +85,9 @@ public class PopulationFunctions
         }//end catch
 
 
-
+        long totalPopAsia = 0, totalPopEurope = 0, totalPopNorthAmerica = 0, totalPopAfrica = 0, totalPopOceania = 0, totalPopAntarctica = 0, totalPopSouthAmerica = 0;
         try
         {
-            long popAsia = 0, popEurope = 0, popNorthAmerica = 0, popAfrica = 0, popOceania = 0, popAntarctica = 0, popSouthAmerica = 0;
             String thisContinent = ("");
 
             // Creates an SQL statement.
@@ -132,42 +111,34 @@ public class PopulationFunctions
 
                 if (thisContinent.contains("Asia"))
                 {
-                    popAsia += (rset.getLong("population"));
+                    totalPopAsia += (rset.getLong("population"));
                 }
                 else if (thisContinent.contains("Europe"))
                 {
-                    popEurope += (rset.getLong("population"));
+                    totalPopEurope += (rset.getLong("population"));
                 }
                 else if (thisContinent.contains("North America"))
                 {
-                    popNorthAmerica += (rset.getLong("population"));
+                    totalPopNorthAmerica += (rset.getLong("population"));
                 }
                 else if (thisContinent.contains("South America"))
                 {
-                    popSouthAmerica += (rset.getLong("population"));
+                    totalPopSouthAmerica += (rset.getLong("population"));
                 }
                 else if (thisContinent.contains("Africa"))
                 {
-                    popAfrica += (rset.getLong("population"));
+                    totalPopAfrica += (rset.getLong("population"));
                 }
                 else if (thisContinent.contains("Oceania"))
                 {
-                    popOceania += (rset.getLong("population"));
+                    totalPopOceania += (rset.getLong("population"));
                 }
                 else if (thisContinent.contains("Antarctica"))
                 {
-                    popAntarctica += (rset.getLong("population"));
+                    totalPopAntarctica += (rset.getLong("population"));
                 }
 
             }//end while
-
-            System.out.println("Total population of Asia = " + popAsia);
-            System.out.println("Total population of Europe = " + popEurope);
-            System.out.println("Total population of North America = " + popNorthAmerica);
-            System.out.println("Total population of South America = " + popSouthAmerica);
-            System.out.println("Total population of Africa = " + popAfrica);
-            System.out.println("Total population of Oceania = " + popOceania);
-            System.out.println("Total population of Antarctica = " + popAntarctica);
 
         }//end try
         catch (Exception e)
@@ -176,13 +147,42 @@ public class PopulationFunctions
             System.out.println("Failed to get information from database (City); check connection?");
             return null;
         }//end catch
+
+
+        // Local variable to store the % of people living in cities.
+        double cityPopPercentage;
+
+        // Asia
+        cityPopPercentage = Math.round((cityPopAsia*1D)/totalPopAsia*100);
+        System.out.println("Asia: total city population: " + cityPopAsia + " (" +  cityPopPercentage + "%). Total country population: " + (totalPopAsia-cityPopAsia) + " (" + (100-cityPopPercentage) + "%). Total overall population: " + totalPopAsia + ".");
+
+        // Europe
+        cityPopPercentage = Math.round((cityPopEurope*1D)/totalPopEurope*100);
+        System.out.println("Europe: total city population: " + cityPopEurope + " (" +  cityPopPercentage + "%). Total country population: " + (totalPopEurope-cityPopEurope) + " (" + (100-cityPopPercentage) + "%). Total overall population: " + totalPopEurope + ".");
+
+        // N America
+        cityPopPercentage = Math.round((cityPopNorthAmerica*1D)/totalPopNorthAmerica*100);
+        System.out.println("North America: total city population: " + cityPopNorthAmerica + " (" +  cityPopPercentage + "%). Total country population: " + (totalPopNorthAmerica-cityPopNorthAmerica) + " (" + (100-cityPopPercentage) + "%). Total overall population: " + totalPopNorthAmerica + ".");
+
+        // S America
+        cityPopPercentage = Math.round((cityPopSouthAmerica*1D)/totalPopSouthAmerica*100);
+        System.out.println("South America: total city population: " + cityPopSouthAmerica + " (" +  cityPopPercentage + "%). Total country population: " + (totalPopSouthAmerica-cityPopSouthAmerica) + " (" + (100-cityPopPercentage) + "%). Total overall population: " + totalPopSouthAmerica + ".");
+
+        // Africa
+        cityPopPercentage = Math.round((cityPopAsia*1D)/totalPopAfrica*100);
+        System.out.println("Africa: total city population: " + cityPopAfrica + " (" +  cityPopPercentage + "%). Total country population: " + (totalPopAfrica-cityPopAfrica) + " (" + (100-cityPopPercentage) + "%). Total overall population: " + totalPopAfrica + ".");
+
+        // Oceania
+        cityPopPercentage = Math.round((cityPopOceania*1D)/totalPopOceania*100);
+        System.out.println("Oceania: total city population: " + cityPopOceania + " (" +  cityPopPercentage + "%). Total country population: " + (totalPopOceania-cityPopOceania) + " (" + (100-cityPopPercentage) + "%). Total overall population: " + totalPopOceania + ".");
+
+        // Antarctica
+        cityPopPercentage = Math.round((cityPopAntarctica*1D)/totalPopAntarctica*100);
+        System.out.println("Antarctica: total city population: " + cityPopAntarctica + " (" +  '0' + "%). Total country population: " + (totalPopAntarctica-cityPopAntarctica) + " (" + ('0') + "%). Total overall population: " + totalPopAntarctica + ".");
+
+
+        // Returns the ArrayList.
         return output;
-    }//end getCity
-
-
-
-
-
-
+    }//end getPopulationinCitybyContinent
 
 }
