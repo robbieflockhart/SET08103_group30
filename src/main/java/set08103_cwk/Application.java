@@ -23,6 +23,7 @@ public class Application
         CountryFunctions cf = new CountryFunctions();
         CityFunctions cityFunc = new CityFunctions();
         CapitalCityFunctions capCityFunc = new CapitalCityFunctions();
+        PopulationFunctions popFunc = new PopulationFunctions();
 
         DisplayFunctions df = new DisplayFunctions();
 
@@ -186,6 +187,9 @@ public class Application
         System.out.println("\n\nPopulation of capital cities in order of region: \n");
         df.displayCapitalCity(capCityRegion);
 
+        ArrayList<Population> PopInCities = popFunc.getPopulationinCitybyContinent(dc.database());
+
+        df.displayPopulationReport(PopInCities);
 
         // Disconnects from the database :
         dc.disconnect();
