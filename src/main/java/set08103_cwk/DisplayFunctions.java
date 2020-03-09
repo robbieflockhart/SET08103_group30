@@ -3,6 +3,7 @@ package set08103_cwk;
 import set08103_cwk.Classes.CapitalCity;
 import set08103_cwk.Classes.City;
 import set08103_cwk.Classes.Country;
+import set08103_cwk.Classes.Population;
 
 import java.util.ArrayList;
 
@@ -35,5 +36,13 @@ public class DisplayFunctions {
             System.out.println(capitalCity.toString());
         }
 
+    }
+
+    public void displayPopulationReport(ArrayList<Population> populations){
+
+        for (Population population : populations)
+        {
+            System.out.println(population.toString());
+        }
     }
 }
