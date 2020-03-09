@@ -7,6 +7,7 @@ package set08103_cwk;
 
 import set08103_cwk.Classes.CapitalCity;
 import set08103_cwk.Classes.City;
+import set08103_cwk.Classes.Continent;
 import set08103_cwk.Classes.Country;
 
 import java.util.ArrayList;
@@ -21,6 +22,7 @@ public class Application
 
         CountryFunctions cf = new CountryFunctions();
         CityFunctions cityFunc = new CityFunctions();
+        PopulationFunctions popFunc = new PopulationFunctions();
         CapitalCityFunctions capCityFunc = new CapitalCityFunctions();
 
         DisplayFunctions df = new DisplayFunctions();
@@ -50,50 +52,50 @@ public class Application
         ArrayList<Country> countryRegion = cf.getRegion(dc.database());
 
         // Prints out a table of all the countries in the world, sorted by population.
-        System.out.println("\n\nShowing all countries in the world, sorted by POPULATION:\n");
-        df.displayCountry(country); // ("country" is a list of all the countries in the world).
+        /*System.out.println("\n\nShowing all countries in the world, sorted by POPULATION:\n");
+        df.displayCountry(country); // ("country" is a list of all the countries in the world).*/
 
 
         // Prints out a table of all the countries in the world, grouped by continent (with a gap between...
         // ... each continent), sorted by population.
 
         // Asia
-        System.out.println("\n\nPopulation of countries in Asia: \n");
-        df.displayCountry(contAsia); // ("contAsia" is a list of all the countries in Asia).
+        /*System.out.println("\n\nPopulation of countries in Asia: \n");
+        df.displayCountry(contAsia); // ("contAsia" is a list of all the countries in Asia).*/
 
         // Africa
-        System.out.println("\n\nPopulation of countries in Africa: \n");
-        df.displayCountry(contAfrica);
+        /*System.out.println("\n\nPopulation of countries in Africa: \n");
+        df.displayCountry(contAfrica);*/
 
         // N America
-        System.out.println("\n\nPopulation of countries in North America: \n");
-        df.displayCountry(contNA);
+        /*System.out.println("\n\nPopulation of countries in North America: \n");
+        df.displayCountry(contNA);*/
 
         // S America
-        System.out.println("\n\nPopulation of countries in South America: \n");
-        df.displayCountry(contSA);
+        /*System.out.println("\n\nPopulation of countries in South America: \n");
+        df.displayCountry(contSA);*/
 
         // Europe
-        System.out.println("\n\nPopulation of countries in Europe: \n");
-        df.displayCountry(contEurope);
+        /*System.out.println("\n\nPopulation of countries in Europe: \n");
+        df.displayCountry(contEurope);*/
 
         // Oceania
-        System.out.println("\n\nPopulation of countries in Oceania: \n");
-        df.displayCountry(contOc);
+        /*System.out.println("\n\nPopulation of countries in Oceania: \n");
+        df.displayCountry(contOc);*/
 
         // Antarctica
-        System.out.println("\n\nPopulation of countries in Antarctica: \n");
-        df.displayCountry(contAnt);
+        /*System.out.println("\n\nPopulation of countries in Antarctica: \n");
+        df.displayCountry(contAnt);*/
 
         // region
-        System.out.println("\n\nRegion Feature: \n");
-        df.displayCountry(countryRegion);
+        /*System.out.println("\n\nRegion Feature: \n");
+        df.displayCountry(countryRegion);*/
 
 
         System.out.println("\n\nCity Functions: \n");
         System.out.println("\n\nDisplay by population: \n");
         ArrayList<City> cityPop = cityFunc.getCity(dc.database());
-        df.displayCity(cityPop);
+        /*df.displayCity(cityPop);*/
 
         ArrayList<City> cityAsia = cityFunc.getCityContAsia(dc.database());
         ArrayList<City> cityEurope = cityFunc.getCityContEurope(dc.database());
@@ -105,46 +107,52 @@ public class Application
         ArrayList<City> cityRegion = cityFunc.getCityRegion(dc.database());
 
         // Asia
-        System.out.println("\n\nPopulation of cities in Asia: \n");
-        df.displayCity(cityAsia); // ("contAsia" is a list of all the countries in Asia).
+        /*System.out.println("\n\nPopulation of cities in Asia: \n");
+        df.displayCity(cityAsia); // ("contAsia" is a list of all the countries in Asia).*/
 
         // Africa
-        System.out.println("\n\nPopulation of cities in Africa: \n");
-        df.displayCity(cityAfrica);
+        /*System.out.println("\n\nPopulation of cities in Africa: \n");
+        df.displayCity(cityAfrica);*/
 
         // N America
-        System.out.println("\n\nPopulation of cities in North America: \n");
-        df.displayCity(cityNorthAmerica);
+        /*System.out.println("\n\nPopulation of cities in North America: \n");
+        df.displayCity(cityNorthAmerica);*/
 
         // S America
-        System.out.println("\n\nPopulation of cities in South America: \n");
-        df.displayCity(citySouthAmerica);
+        /*System.out.println("\n\nPopulation of cities in South America: \n");
+        df.displayCity(citySouthAmerica);*/
 
         // Europe
-        System.out.println("\n\nPopulation of cities in Europe: \n");
-       df.displayCity(cityEurope);
+        /*System.out.println("\n\nPopulation of cities in Europe: \n");
+       df.displayCity(cityEurope);*/
 
         // Oceania
-        System.out.println("\n\nPopulation of cities in Oceania: \n");
-        df.displayCity(cityOcean);
+        /*System.out.println("\n\nPopulation of cities in Oceania: \n");
+        df.displayCity(cityOcean);*/
 
         // Antarctica
-        System.out.println("\n\nPopulation of cities in Antarctica: \n");
-        df.displayCity(cityAnt);
+        /*System.out.println("\n\nPopulation of cities in Antarctica: \n");
+        df.displayCity(cityAnt);*/
 
-        System.out.println("\n\nRegion Feature: \n");
-        df.displayCity(cityRegion);
+        /*System.out.println("\n\nRegion Feature: \n");
+        df.displayCity(cityRegion);*/
 
         ArrayList<CapitalCity> capitalCity = capCityFunc.getCapitalCity(dc.database());
 
         // Capital Cities by population
-        System.out.println("\n\nPopulation of capital cities: \n");
-        df.displayCapitalCity(capitalCity);
+        /*System.out.println("\n\nPopulation of capital cities: \n");
+        df.displayCapitalCity(capitalCity);*/
 
         ArrayList<City> citiesGBdistrictSBpop = cityFunc.getCityDistrict(dc.database());
 
-        System.out.println("\n\nCITIES in the world, GROUPED BY district, SORTED BY population: \n");
-        df.displayCity(citiesGBdistrictSBpop);
+        /*System.out.println("\n\nCITIES in the world, GROUPED BY district, SORTED BY population (Issue #8): \n");
+        df.displayCity(citiesGBdistrictSBpop);*/
+
+        System.out.println("My function");
+        ArrayList<Continent> PopInCities = popFunc.getPopulationinCitybyContinent(dc.database());
+
+        //df.displayCity(displayContinent);
+
 
         // Disconnects from the database :
         dc.disconnect();

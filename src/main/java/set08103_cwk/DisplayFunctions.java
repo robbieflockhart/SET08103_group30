@@ -3,6 +3,7 @@ package set08103_cwk;
 import set08103_cwk.Classes.CapitalCity;
 import set08103_cwk.Classes.City;
 import set08103_cwk.Classes.Country;
+import set08103_cwk.Classes.Continent;
 
 import java.util.ArrayList;
 
@@ -33,6 +34,16 @@ public class DisplayFunctions {
         for (CapitalCity capitalCity : capital)
         {
             System.out.println(capitalCity.toString());
+        }
+
+    }
+
+
+    public void displayContinent(ArrayList<Continent> continents)
+    {
+        for (Continent continent : continents)
+        {
+            System.out.println(continents.toString());
         }
 
     }
