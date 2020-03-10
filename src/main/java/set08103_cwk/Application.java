@@ -191,6 +191,9 @@ public class Application
 
         df.displayPopulationReport(PopInCities);
 
+        ArrayList<Population> popByRegion = popFunc.getPopulationinCitybyRegion(dc.database());
+        df.displayPopulationReport(popByRegion);
+
         // Disconnects from the database :
         dc.disconnect();
     }
