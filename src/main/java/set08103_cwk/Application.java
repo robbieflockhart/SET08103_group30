@@ -187,14 +187,16 @@ public class Application
         System.out.println("\n\nPopulation of capital cities in order of region: \n");
         df.displayCapitalCity(capCityRegion);
 
+        System.out.println("\n\nPopulation Reports: \n");
         ArrayList<Population> PopInCities = popFunc.getPopulationinCitybyContinent(dc.database());
-
-        df.displayPopulationReport(PopInCities);
-
         ArrayList<Population> popByRegion = popFunc.getPopulationinCitybyRegion(dc.database());
-        df.displayPopulationReport(popByRegion);
-
         ArrayList<Population> popByCountry = popFunc.getPopulationinCitybyCountry(dc.database());
+
+        System.out.println("\n\nPopulation Report by continent: \n");
+        df.displayPopulationReport(PopInCities);
+        System.out.println("\n\nPopulation Report by region: \n");
+        df.displayPopulationReport(popByRegion);
+        System.out.println("\n\nPopulation Report by country: \n");
         df.displayPopulationReport(popByCountry);
 
         // Disconnects from the database :
