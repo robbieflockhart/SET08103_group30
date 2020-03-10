@@ -59,7 +59,7 @@ public class Population {
 
     @Override
     public String toString() {
-        return name + " " + population + " " + cityPopulation + " " + cityPopulationPercent + " " + notCityPopulation + " " + nonCityPopulationPercent  +"\n";
+        return name + " " + population + " " + cityPopulation + " " + cityPopulationPercent + "% " + notCityPopulation + " " + nonCityPopulationPercent  +"% \n";
     }
 
 }
