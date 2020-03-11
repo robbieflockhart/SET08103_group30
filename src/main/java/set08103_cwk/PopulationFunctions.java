@@ -15,7 +15,7 @@ public class PopulationFunctions {
 
             // Creates an SQL statement, stored as a STRING.
             String strSelect =
-                    "SELECT country.continent, SUM(DISTINCT country.population), SUM(DISTINCT city.population) "
+                    "SELECT country.continent, SUM(DISTINCT country.population), SUM(city.population) "
                             + "FROM city JOIN country ON CountryCode=code "
                             + "GROUP BY country.continent ";
 
@@ -27,10 +27,10 @@ public class PopulationFunctions {
                 Population continent = new Population();
                 continent.setName(rset.getString("country.continent"));
                 continent.setPopulation(rset.getLong("SUM(DISTINCT country.population)"));
-                double percentCity = Math.round((rset.getLong("SUM(DISTINCT city.population)") * 1D) / rset.getLong("SUM(DISTINCT country.population)") * 100);
+                double percentCity = Math.round((rset.getLong("SUM(city.population)") * 1D) / rset.getLong("SUM(DISTINCT country.population)") * 100);
                 continent.setCityPopulationPercent(percentCity);
-                continent.setCityPopulation(rset.getLong("SUM(DISTINCT city.population)"));
-                long outCity = (rset.getLong("SUM(DISTINCT country.population)") - rset.getLong("SUM(DISTINCT city.population)"));
+                continent.setCityPopulation(rset.getLong("SUM(city.population)"));
+                long outCity = (rset.getLong("SUM(DISTINCT country.population)") - rset.getLong("SUM(city.population)"));
                 continent.setNotCityPopulation(outCity);
                 double percentNonCity = Math.round((outCity * 1D) / rset.getLong("SUM(DISTINCT country.population)") * 100);
                 continent.setNonCityPopulationPercent(percentNonCity);
@@ -58,7 +58,7 @@ public class PopulationFunctions {
 
             // Creates an SQL statement, stored as a STRING.
             String strSelect =
-                    "SELECT country.region, SUM(DISTINCT country.population), SUM(DISTINCT city.population) "
+                    "SELECT country.region, SUM(DISTINCT country.population), SUM(city.population) "
                             + "FROM city JOIN country ON CountryCode=code "
                             + "GROUP BY country.region ";
 
@@ -70,10 +70,10 @@ public class PopulationFunctions {
                 Population popReport = new Population();
                 popReport.setName(rset.getString("country.region"));
                 popReport.setPopulation(rset.getLong("SUM(DISTINCT country.population)"));
-                double percentCity = Math.round((rset.getLong("SUM(DISTINCT city.population)") * 1D) / rset.getLong("SUM(DISTINCT country.population)") * 100);
+                double percentCity = Math.round((rset.getLong("SUM(city.population)") * 1D) / rset.getLong("SUM(DISTINCT country.population)") * 100);
                 popReport.setCityPopulationPercent(percentCity);
-                popReport.setCityPopulation(rset.getLong("SUM(DISTINCT city.population)"));
-                long outCity = (rset.getLong("SUM(DISTINCT country.population)") - rset.getLong("SUM(DISTINCT city.population)"));
+                popReport.setCityPopulation(rset.getLong("SUM(city.population)"));
+                long outCity = (rset.getLong("SUM(DISTINCT country.population)") - rset.getLong("SUM(city.population)"));
                 popReport.setNotCityPopulation(outCity);
                 double percentNonCity = Math.round((outCity * 1D) / rset.getLong("SUM(DISTINCT country.population)") * 100);
                 popReport.setNonCityPopulationPercent(percentNonCity);
@@ -101,7 +101,7 @@ public class PopulationFunctions {
 
             // Creates an SQL statement, stored as a STRING.
             String strSelect =
-                    "SELECT country.Name, SUM(DISTINCT country.population), SUM(DISTINCT city.population) "
+                    "SELECT country.Name, SUM(DISTINCT country.population), SUM(city.population) "
                             + "FROM city JOIN country ON CountryCode=code "
                             + "GROUP BY country.Name ";
 
@@ -113,10 +113,10 @@ public class PopulationFunctions {
                 Population popReport = new Population();
                 popReport.setName(rset.getString("country.Name"));
                 popReport.setPopulation(rset.getLong("SUM(DISTINCT country.population)"));
-                double percentCity = Math.round((rset.getLong("SUM(DISTINCT city.population)") * 1D) / rset.getLong("SUM(DISTINCT country.population)") * 100);
+                double percentCity = Math.round((rset.getLong("SUM(city.population)") * 1D) / rset.getLong("SUM(DISTINCT country.population)") * 100);
                 popReport.setCityPopulationPercent(percentCity);
-                popReport.setCityPopulation(rset.getLong("SUM(DISTINCT city.population)"));
-                long outCity = (rset.getLong("SUM(DISTINCT country.population)") - rset.getLong("SUM(DISTINCT city.population)"));
+                popReport.setCityPopulation(rset.getLong("SUM(city.population)"));
+                long outCity = (rset.getLong("SUM(DISTINCT country.population)") - rset.getLong("SUM(city.population)"));
                 popReport.setNotCityPopulation(outCity);
                 double percentNonCity = Math.round((outCity * 1D) / rset.getLong("SUM(DISTINCT country.population)") * 100);
                 popReport.setNonCityPopulationPercent(percentNonCity);

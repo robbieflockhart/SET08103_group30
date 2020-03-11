@@ -31,7 +31,7 @@ public class Application
         dc.connect();
 
         // Gets all the countries in the world and saves them to an arraylist, in population order.
-        ArrayList<Country> country = cf.getCountry(dc.database());
+        /*ArrayList<Country> country = cf.getCountry(dc.database());
 
         //Creates an Array List to store the countries, and then calls the function ...
         // to populate the ArrayList, running in population order.
@@ -185,19 +185,19 @@ public class Application
         ArrayList<CapitalCity> capCityRegion = capCityFunc.getCapCityRegion(dc.database());
 
         System.out.println("\n\nPopulation of capital cities in order of region: \n");
-        df.displayCapitalCity(capCityRegion);
+        df.displayCapitalCity(capCityRegion);*/
 
         System.out.println("\n\nPopulation Reports: \n");
         ArrayList<Population> PopInCities = popFunc.getPopulationinCitybyContinent(dc.database());
-        ArrayList<Population> popByRegion = popFunc.getPopulationinCitybyRegion(dc.database());
-        ArrayList<Population> popByCountry = popFunc.getPopulationinCitybyCountry(dc.database());
+        //ArrayList<Population> popByRegion = popFunc.getPopulationinCitybyRegion(dc.database());
+        //ArrayList<Population> popByCountry = popFunc.getPopulationinCitybyCountry(dc.database());
 
         System.out.println("\n\nPopulation Report by continent: \n");
         df.displayPopulationReport(PopInCities);
-        System.out.println("\n\nPopulation Report by region: \n");
-        df.displayPopulationReport(popByRegion);
-        System.out.println("\n\nPopulation Report by country: \n");
-        df.displayPopulationReport(popByCountry);
+        //System.out.println("\n\nPopulation Report by region: \n");
+        //df.displayPopulationReport(popByRegion);
+        //System.out.println("\n\nPopulation Report by country: \n");
+        //df.displayPopulationReport(popByCountry);
 
         // Disconnects from the database :
         dc.disconnect();
