@@ -24,19 +24,20 @@ public class PopulationFunctions {
 
             // Indicates which columns on the database align to which attributes within "country".
             while (rset.next()) {
-                Population continent = new Population();
-                continent.setName(rset.getString("country.continent"));
-                continent.setPopulation(rset.getLong("SUM(DISTINCT country.population)"));
+                Population popReport = new Population();
+                popReport.setName(rset.getString("(DISTINCT country.continent)"));
+                popReport.setPopulation(rset.getLong("SUM(DISTINCT country.population)"));
                 double percentCity = Math.round((rset.getLong("SUM(city.population)") * 1D) / rset.getLong("SUM(DISTINCT country.population)") * 100);
-                continent.setCityPopulationPercent(percentCity);
-                continent.setCityPopulation(rset.getLong("SUM(city.population)"));
+                popReport.setCityPopulationPercent(percentCity);
+                popReport.setCityPopulation(rset.getLong("SUM(city.population)"));
                 long outCity = (rset.getLong("SUM(DISTINCT country.population)") - rset.getLong("SUM(city.population)"));
-                continent.setNotCityPopulation(outCity);
+                popReport.setNotCityPopulation(outCity);
                 double percentNonCity = Math.round((outCity * 1D) / rset.getLong("SUM(DISTINCT country.population)") * 100);
-                continent.setNonCityPopulationPercent(percentNonCity);
+                popReport.setNonCityPopulationPercent(percentNonCity);
+
 
                 // Adds this country (plus details) to the ArrayList.
-                output.add(continent);
+                output.add(popReport);
             }//end while
 
             return output;
