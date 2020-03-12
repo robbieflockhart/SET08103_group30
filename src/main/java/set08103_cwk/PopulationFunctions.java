@@ -25,7 +25,7 @@ public class PopulationFunctions {
             // Indicates which columns on the database align to which attributes within "country".
             while (rset.next()) {
                 Population popReport = new Population();
-                popReport.setName(rset.getString("(DISTINCT country.continent)"));
+                popReport.setName(rset.getString("country.continent"));
                 popReport.setPopulation(rset.getLong("SUM(DISTINCT country.population)"));
                 double percentCity = Math.round((rset.getLong("SUM(city.population)") * 1D) / rset.getLong("SUM(DISTINCT country.population)") * 100);
                 popReport.setCityPopulationPercent(percentCity);
