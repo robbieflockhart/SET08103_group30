@@ -317,4 +317,49 @@ public class CapitalCityFunctions {
         }//end catch
         return output;
     }//end SaveToArray
+
+
+    // I want to view the top (LIMIT) populated capital cities in a region. Issue 25. Completed 15/03/2020 by Gale.
+    public ArrayList<CapitalCity> capCityInRegion(Connection con, int LIMIT)
+    {
+        try
+        {
+            // Creates an SQL statement.
+            Statement stmt = con.createStatement();
+
+            // Creates an array list to store the data.
+            ArrayList<CapitalCity> output = new ArrayList<CapitalCity>();
+
+            // Creates an SQL statement, stored as a STRING.
+            String strSelect =
+                    "SELECT city.Name, country.Name, city.Population "
+                            //+ "FROM city JOIN country ON CountryCode=code "
+                            + "FROM city JOIN country ON CountryCode=code "
+                            + "WHERE ID = Capital "
+                            + "ORDER BY country.Region ASC, population DESC "
+                            + "LIMIT " + LIMIT + " ";
+
+            // Sends the SQL statement to the database.
+            ResultSet rset = stmt.executeQuery(strSelect);
+
+            // Indicates which columns on the database align to which attributes within "country".
+            while (rset.next()) {
+                CapitalCity city =  new CapitalCity();
+                city.setName(rset.getString("city.Name"));
+                city.setCountry(rset.getString("country.Name"));
+                city.setPopulation(rset.getInt("city.Population"));
+
+                // Adds this country (plus details) to the ArrayList.
+                output.add(city);
+            }
+            // Returns the ArrayList.
+            return output;
+        }
+        catch (Exception e)
+        {
+            System.out.println(e.getMessage());
+            System.out.println("Failed to get information from database (Capital City); check connection?");
+            return null;
+        }
+    }
 }
