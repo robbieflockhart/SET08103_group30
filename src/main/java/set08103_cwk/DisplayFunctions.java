@@ -11,7 +11,7 @@ public class DisplayFunctions {
 
     // Prints out a table of all the countries passed in, sorted by population.
 
-    public void displayCountry(ArrayList<Country> countries)
+    public static void displayCountry(ArrayList<Country> countries)
     {
         for (Country country : countries)
         {
@@ -20,7 +20,7 @@ public class DisplayFunctions {
 
     }
 
-    public void displayCity(ArrayList<City> cities)
+    public static void displayCity(ArrayList<City> cities)
     {
         for (City city : cities)
         {
@@ -29,7 +29,7 @@ public class DisplayFunctions {
 
     }
 
-    public void displayCapitalCity(ArrayList<CapitalCity> capital)
+    public static void displayCapitalCity(ArrayList<CapitalCity> capital)
     {
         for (CapitalCity capitalCity : capital)
         {
@@ -38,7 +38,7 @@ public class DisplayFunctions {
 
     }
 
-    public void displayPopulationReport(ArrayList<Population> populations){
+    public static void displayPopulationReport(ArrayList<Population> populations){
 
         for (Population population : populations)
         {
