@@ -8,5 +8,7 @@ class MyTest
     void unitTest()
     {
         //find content to put in here
+        assertEquals(5, 5);
+
     }
 }
