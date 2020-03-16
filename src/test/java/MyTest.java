@@ -1,17 +1,18 @@
 import org.junit.jupiter.api.Test;
+import set08103_cwk.CityFunctions;
 import set08103_cwk.Classes.CapitalCity;
 import set08103_cwk.Classes.City;
 import set08103_cwk.Classes.Country;
 import set08103_cwk.Classes.Population;
+import set08103_cwk.DatabaseConnection;
 import set08103_cwk.DisplayFunctions;
-
 import java.util.ArrayList;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import set08103_cwk.Application;
 
 
 class MyTest
 {
+    DatabaseConnection dc = new DatabaseConnection();
     @Test
     void unitTestOutputEmptyCity()
     {
@@ -41,15 +42,22 @@ class MyTest
     }//end unitTestOutputEmptyCapitalCity
 
     @Test
-    void unitTestOutputNullCity()
+    void unitTestOutputNotNullCity()
     {
-        ArrayList<City> output = new ArrayList<>();
-        output.add(null);
-        DisplayFunctions.displayCity(output);
+        dc.connect();
+        ArrayList<City> output = CityFunctions.getCity(dc.database());
+        // Check employees is not null
+        if (output == null)
+        {
+            System.out.println("");
+        }
+
+        dc.disconnect();
+
     }//end unitTestOutputNullCity
 
     @Test
-    void unitTestOutputNullCapitalCity()
+    void unitTestOutputNotNullCapitalCity()
     {
         ArrayList<CapitalCity> output = new ArrayList<>();
         output.add(null);
@@ -57,7 +65,7 @@ class MyTest
     }//end unitTestOutputNullCapitalCity
 
     @Test
-    void unitTestOutputNullCountry()
+    void unitTestOutputNotNullCountry()
     {
         ArrayList<Country> output = new ArrayList<>();
         output.add(null);
@@ -65,7 +73,7 @@ class MyTest
     }//end unitTestOutputNullCapitalCity
 
     @Test
-    void unitTestOutputNullPopulation()
+    void unitTestOutputNotNullPopulation()
     {
         ArrayList<Population> output = new ArrayList<>();
         output.add(null);
