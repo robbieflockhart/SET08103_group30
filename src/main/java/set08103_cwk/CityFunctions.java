@@ -8,7 +8,7 @@ import java.util.ArrayList;
 
 public class CityFunctions {
 
-    public ArrayList<City> getCity(Connection con) {
+    public static ArrayList<City> getCity(Connection con) {
         try {
             // Creates an SQL statement.
             Statement stmt = con.createStatement();
@@ -327,7 +327,7 @@ public class CityFunctions {
 //end CityFunctions
 
 
-    private ArrayList<City> saveToArray(ArrayList<City> output, ResultSet rset) {
+    private static ArrayList<City> saveToArray(ArrayList<City> output, ResultSet rset) {
         try {
             // Sends the query to the database:
 
