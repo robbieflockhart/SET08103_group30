@@ -271,6 +271,7 @@ public class CountryFunctions {
         }
     }
 
+    // The organisation wants to be able to produce a report showing the top (n) populated countries in a region. Issue 17. Created 16/03/2020 by Gale.
     public ArrayList<Country> getRegion(Connection con)
     {
         try
@@ -287,8 +288,14 @@ public class CountryFunctions {
                             + "FROM country "
                             + "ORDER BY Region ASC, Population DESC ";
 
+
             // Sends the SQL statement to the database.
             ResultSet rset = stmt.executeQuery(strSelect);
+
+            while (rset.next())
+            {
+                SaveToArray(output, rset);
+            }
 
 
             // Returns the ArrayList.
@@ -298,6 +305,46 @@ public class CountryFunctions {
         {
             System.out.println(e.getMessage());
             System.out.println("Failed to get information from database (Antarctica); check connection?\n");
+            return null;
+        }
+    }
+
+
+
+    public ArrayList<Country> getRegionN(Connection con, int LIMIT)
+    {
+        try
+        {
+            // Creates an SQL statement.
+            Statement stmt = con.createStatement();
+
+            // Creates an array list to store the data.
+            ArrayList<Country> output = new ArrayList<>();
+
+            // Creates an SQL statement, stored as a STRING.
+            String strSelect =
+                    "SELECT Name, Population, Code, Continent, Region, Capital "
+                            + "FROM country "
+                            + "ORDER BY Region ASC, Population DESC "
+                            + "LIMIT " + LIMIT;
+
+
+            // Sends the SQL statement to the database.
+            ResultSet rset = stmt.executeQuery(strSelect);
+
+            while (rset.next())
+            {
+                SaveToArray(output, rset);
+            }
+
+
+            // Returns the ArrayList.
+            return output;
+        }
+        catch (Exception e)
+        {
+            System.out.println(e.getMessage());
+            System.out.println("Failed to get information from database (Issue 17); check connection?\n");
             return null;
         }
     }
