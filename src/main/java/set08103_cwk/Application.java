@@ -28,7 +28,7 @@ public class Application
         DisplayFunctions df = new DisplayFunctions();
 
         // Connect to database
-        dc.connect();
+        dc.connect("localhost:33060");
 
         // Gets all the countries in the world and saves them to an arraylist, in population order.
         ArrayList<Country> country = cf.getCountry(dc.database());
