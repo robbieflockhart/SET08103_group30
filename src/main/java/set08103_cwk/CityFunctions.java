@@ -326,6 +326,34 @@ public class CityFunctions {
     }//endGetCityDistrict
 //end CityFunctions
 
+    // I want to view the top (LIMIT) populated cities in a district. Issue 33. Completed 15/03/2020 by Gale.
+    public ArrayList<City> getCityInDistrict(Connection con, int LIMIT)
+    {
+        try
+        {
+            Statement stmt = con.createStatement();
+            ArrayList<City> output = new ArrayList<>();
+
+            String strSelect =
+                    "SELECT city.Name, country.Name, District, city.Population "
+                            + "FROM city JOIN country ON CountryCode=code "
+                            + "ORDER BY District ASC, Population DESC "
+                            + "LIMIT " + LIMIT + " ";
+
+            ResultSet rset = stmt.executeQuery(strSelect);
+
+            saveToArray(output, rset);
+
+            return output;
+        }
+        catch (Exception e)
+        {
+            System.out.println(e.getMessage());
+            System.out.println("Failed to get information from database (City); check connection?");
+            return null;
+        }
+    }
+
 
     private ArrayList<City> saveToArray(ArrayList<City> output, ResultSet rset) {
         try {
@@ -350,41 +378,4 @@ public class CityFunctions {
         return output; //returns the updated output array
     } //end saveToArray
 // catch
-
-
-
-    // I want to view the top (LIMIT) populated cities in a district. Issue 33. Completed 15/03/2020 by Gale.
-    public ArrayList<City> getCityInDistrict(Connection con, int LIMIT)
-    {
-        try
-        {
-            Statement stmt = con.createStatement();
-            ArrayList<City> output = new ArrayList<City>();
-
-            String strSelect =
-                    "SELECT city.Name, country.Name, District, city.Population "
-                            + "FROM city JOIN country ON CountryCode=code "
-                            + "ORDER BY District ASC, Population DESC "
-                            + "LIMIT " + LIMIT + " ";
-
-            ResultSet rset = stmt.executeQuery(strSelect);
-
-            while (rset.next()) {
-                City city =  new City();
-                city.setName(rset.getString("city.Name"));
-                city.setCountry(rset.getString("country.Name"));
-                city.setDistrict(rset.getString("District"));
-                city.setPopulation(rset.getInt("city.Population"));
-
-                output.add(city);
-            }
-            return output;
-        }
-        catch (Exception e)
-        {
-            System.out.println(e.getMessage());
-            System.out.println("Failed to get information from database (City); check connection?");
-            return null;
-        }
-    }
 }

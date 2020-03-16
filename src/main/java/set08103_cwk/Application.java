@@ -200,11 +200,13 @@ public class Application
         //df.displayPopulationReport(popByCountry);
 
 
+
+        //change to be user input
         int LIMIT = 10;
         // I want to view the top (LIMIT) populated cities in a district. Issue 33. Completed 15/03/2020 by Gale.
-        System.out.println("I want to view the top " + LIMIT + " populated cities in a district. Issue 33.");
-        ArrayList<City> cityDistrictPop = cityFunc.getCityInDistrict(dc.database(), LIMIT);
-        df.displayCity(cityDistrictPop);
+        System.out.println("I want to view the top " + LIMIT + " populated cities in a district.");
+        ArrayList<City> userCityDistrictPop = cityFunc.getCityInDistrict(dc.database(), LIMIT);
+        df.displayCity(userCityDistrictPop);
 
         // Disconnects from the database :
         dc.disconnect();
