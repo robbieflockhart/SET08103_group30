@@ -18,6 +18,7 @@ class MyTest
     {
         ArrayList<City> output = new ArrayList<>();
         DisplayFunctions.displayCity(output);
+        System.out.println("City Empty");
     }//end unitTestOutputEmptyCity
 
     @Test
@@ -25,6 +26,7 @@ class MyTest
     {
         ArrayList<CapitalCity> output = new ArrayList<>();
         DisplayFunctions.displayCapitalCity(output);
+        System.out.println("Capital City Empty");
     }//end unitTestOutputEmptyCapitalCity
 
     @Test
@@ -32,6 +34,7 @@ class MyTest
     {
         ArrayList<Country> output = new ArrayList<>();
         DisplayFunctions.displayCountry(output);
+        System.out.println("Country Empty");
     }//end unitTestOutputEmptyCapitalCity
 
     @Test
@@ -39,45 +42,7 @@ class MyTest
     {
         ArrayList<Population> output = new ArrayList<>();
         DisplayFunctions.displayPopulationReport(output);
+        System.out.println("Population Empty");
     }//end unitTestOutputEmptyCapitalCity
-
-    @Test
-    void unitTestOutputNotNullCity()
-    {
-        dc.connect();
-        ArrayList<City> output = CityFunctions.getCity(dc.database());
-        // Check employees is not null
-        if (output == null)
-        {
-            System.out.println("");
-        }
-
-        dc.disconnect();
-
-    }//end unitTestOutputNullCity
-
-    @Test
-    void unitTestOutputNotNullCapitalCity()
-    {
-        ArrayList<CapitalCity> output = new ArrayList<>();
-        output.add(null);
-        DisplayFunctions.displayCapitalCity(output);
-    }//end unitTestOutputNullCapitalCity
-
-    @Test
-    void unitTestOutputNotNullCountry()
-    {
-        ArrayList<Country> output = new ArrayList<>();
-        output.add(null);
-        DisplayFunctions.displayCountry(output);
-    }//end unitTestOutputNullCapitalCity
-
-    @Test
-    void unitTestOutputNotNullPopulation()
-    {
-        ArrayList<Population> output = new ArrayList<>();
-        output.add(null);
-        DisplayFunctions.displayPopulationReport(output);
-    }//end unitTestOutputNullCapitalCity
-
+    
 }
