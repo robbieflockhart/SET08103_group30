@@ -6,6 +6,8 @@ import org.junit.jupiter.api.TestInstance;
 import set08103_cwk.*;
 import set08103_cwk.Classes.CapitalCity;
 import set08103_cwk.Classes.City;
+import set08103_cwk.Classes.Country;
+import set08103_cwk.Classes.Population;
 
 import java.util.ArrayList;
 
@@ -30,6 +32,38 @@ public class UnitTest {
     }
 
     @Test
+    void unitTestOutputEmptyCity()
+    {
+        ArrayList<City> output = new ArrayList<>();
+        disp.displayCity(output);
+        System.out.println("City Empty");
+    }//end unitTestOutputEmptyCity
+
+    @Test
+    void unitTestOutputEmptyCapitalCity()
+    {
+        ArrayList<CapitalCity> output = new ArrayList<>();
+        disp.displayCapitalCity(output);
+        System.out.println("Capital City Empty");
+    }//end unitTestOutputEmptyCapitalCity
+
+    @Test
+    void unitTestOutputEmptyCountry()
+    {
+        ArrayList<Country> output = new ArrayList<>();
+        disp.displayCountry(output);
+        System.out.println("Country Empty");
+    }//end unitTestOutputEmptyCapitalCity
+
+    @Test
+    void unitTestOutputEmptyPopulation()
+    {
+        ArrayList<Population> output = new ArrayList<>();
+        disp.displayPopulationReport(output);
+        System.out.println("Population Empty");
+    }//end unitTestOutputEmptyCapitalCity
+
+    @Test
     void printCityFunctionTest1()
     {
         ArrayList<City> unitTestCity = new ArrayList<>();
@@ -49,9 +83,8 @@ public class UnitTest {
         CapitalCity cityTest = new CapitalCity();
         cityTest.setName("Kabul");
         cityTest.setCountry("Afghanistan");
-        cityTest.setDistrict("Kabol");
         cityTest.setPopulation(1780000);
         unitTestCapitalCity .add(cityTest);
-        disp.displayCity(unitTestCity);
+        disp.displayCapitalCity(unitTestCapitalCity);
     }
 }
