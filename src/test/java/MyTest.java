@@ -40,4 +40,36 @@ class MyTest
         DisplayFunctions.displayPopulationReport(output);
     }//end unitTestOutputEmptyCapitalCity
 
+    @Test
+    void unitTestOutputNullCity()
+    {
+        ArrayList<City> output = new ArrayList<>();
+        output.add(null);
+        DisplayFunctions.displayCity(output);
+    }//end unitTestOutputNullCity
+
+    @Test
+    void unitTestOutputNullCapitalCity()
+    {
+        ArrayList<CapitalCity> output = new ArrayList<>();
+        output.add(null);
+        DisplayFunctions.displayCapitalCity(output);
+    }//end unitTestOutputNullCapitalCity
+
+    @Test
+    void unitTestOutputNullCountry()
+    {
+        ArrayList<Country> output = new ArrayList<>();
+        output.add(null);
+        DisplayFunctions.displayCountry(output);
+    }//end unitTestOutputNullCapitalCity
+
+    @Test
+    void unitTestOutputNullPopulation()
+    {
+        ArrayList<Population> output = new ArrayList<>();
+        output.add(null);
+        DisplayFunctions.displayPopulationReport(output);
+    }//end unitTestOutputNullCapitalCity
+
 }
