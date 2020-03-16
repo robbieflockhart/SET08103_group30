@@ -43,9 +43,15 @@ public class UnitTest {
     }
 
     @Test
-    void printCityFunctionTest2()
+    void printCaptialCityFunctionTest()
     {
-        ArrayList<City> unitTestCity = city.getCityContAsia(dc.database());
+        ArrayList<CapitalCity> unitTestCapitalCity = new ArrayList<>();
+        CapitalCity cityTest = new CapitalCity();
+        cityTest.setName("Kabul");
+        cityTest.setCountry("Afghanistan");
+        cityTest.setDistrict("Kabol");
+        cityTest.setPopulation(1780000);
+        unitTestCapitalCity .add(cityTest);
         disp.displayCity(unitTestCity);
     }
 }
