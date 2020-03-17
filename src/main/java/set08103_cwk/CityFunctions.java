@@ -326,6 +326,34 @@ public class CityFunctions {
     }//endGetCityDistrict
 //end CityFunctions
 
+    public ArrayList<City> getCityRegionUserInput(Connection con, int userLimit) {
+        try {
+            // Creates an SQL statement.
+            Statement stmt = con.createStatement();
+
+            // Creates an array list to store the data.
+            ArrayList<City> output = new ArrayList<>();
+
+            // Creates an SQL statement, stored as a STRING.
+            String strSelect =
+                    "SELECT city.Name, country.Name, District, city.Population "
+                            + "FROM city JOIN country ON CountryCode=code "
+                            + "ORDER BY country.Region ASC, Population DESC "
+                            + "LIMIT " + userLimit + " ";
+
+            ResultSet rset = stmt.executeQuery(strSelect);
+            // Sends the query to the database:
+            saveToArray(output, rset);
+            // Returns the ArrayList.
+            return output;
+        }//end try
+        catch (Exception e) {
+            System.out.println(e.getMessage());
+            System.out.println("Failed to get information from database (Antarctica); check connection?\n");
+            return null;
+        }//catch
+    }//end getCityRegion
+
 
     private static ArrayList<City> saveToArray(ArrayList<City> output, ResultSet rset) {
         try {
