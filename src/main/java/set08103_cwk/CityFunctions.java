@@ -326,6 +326,34 @@ public class CityFunctions {
     }//endGetCityDistrict
 //end CityFunctions
 
+    // I want to view the top (n) populated cities in the world (Issue 29). Created 16/03/2020 by Gale.
+    public ArrayList<City> getCityUserLimit(Connection con, int LIMIT) {
+        try {
+            // Creates an SQL statement.
+            Statement stmt = con.createStatement();
+
+            // Creates an array list to store the data.
+            ArrayList<City> output = new ArrayList<>();
+
+            // Creates an SQL statement, stored as a STRING.
+            String strSelect =
+                    "SELECT city.Name, country.Name, District, city.Population "
+                            + "FROM city JOIN country ON CountryCode=code "
+                            + "ORDER BY Population DESC "
+                            + "LIMIT " + LIMIT;
+
+            ResultSet rset = stmt.executeQuery(strSelect);
+            // Sends the query to the database:
+            saveToArray(output, rset);
+
+            return output;
+        }//end try
+        catch (Exception e) {
+            System.out.println(e.getMessage());
+            System.out.println("Failed to get information from database (City); check connection?");
+            return null;
+        }//end catch
+    }//end getCity
 
     private ArrayList<City> saveToArray(ArrayList<City> output, ResultSet rset) {
         try {
@@ -351,33 +379,4 @@ public class CityFunctions {
     } //end saveToArray
 // catch
 
-
-
-    // I want to view the top (n) populated cities in the world (Issue 29). Created 16/03/2020 by Gale.
-    public ArrayList<City> getCityN(Connection con, int LIMIT) {
-        try {
-            // Creates an SQL statement.
-            Statement stmt = con.createStatement();
-
-            // Creates an array list to store the data.
-            ArrayList<City> output = new ArrayList<>();
-
-            // Creates an SQL statement, stored as a STRING.
-            String strSelect =
-                    "SELECT city.Name, country.Name, District, city.Population "
-                            + "FROM city JOIN country ON CountryCode=code "
-                            + "ORDER BY Population DESC "
-                            + "LIMIT " + LIMIT;
-
-            ResultSet rset = stmt.executeQuery(strSelect);
-            // Sends the query to the database:
-            saveToArray(output, rset);
-            return output;
-        }//end try
-        catch (Exception e) {
-            System.out.println(e.getMessage());
-            System.out.println("Failed to get information from database (City); check connection?");
-            return null;
-        }//end catch
-    }//end getCity
 }

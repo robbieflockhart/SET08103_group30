@@ -201,8 +201,8 @@ public class Application
 
         int LIMIT = 10;
         System.out.println("\n\nI want to view the top " + LIMIT + " populated cities in the world (Issue 29).\n");
-        ArrayList<City> popInCitiesN = cityFunc.getCityN(dc.database(), LIMIT);
-        df.displayCity(popInCitiesN);
+        ArrayList<City> userPopInCities = cityFunc.getCityUserLimit(dc.database(), LIMIT);
+        df.displayCity(userPopInCities);
 
 
         // Disconnects from the database :
