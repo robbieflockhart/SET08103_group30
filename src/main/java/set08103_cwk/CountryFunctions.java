@@ -332,11 +332,7 @@ public class CountryFunctions {
             // Sends the SQL statement to the database.
             ResultSet rset = stmt.executeQuery(strSelect);
 
-            while (rset.next())
-            {
-                SaveToArray(output, rset);
-            }
-
+            SaveToArray(output, rset);
 
             // Returns the ArrayList.
             return output;

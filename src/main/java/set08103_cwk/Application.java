@@ -97,8 +97,8 @@ public class Application
         System.out.println("The organisation wants to be able to produce a report showing the top (n) populated countries in a region.");
         int LIMIT = 10;
         System.out.println("Region Feature: \n");
-        ArrayList<Country> countryRegionN = cf.getRegionN(dc.database(), LIMIT);
-        df.displayCountry(countryRegionN);
+        ArrayList<Country> userCountryRegion = cf.getRegionN(dc.database(), LIMIT);
+        df.displayCountry(userCountryRegion);
 
 
         System.out.println("\n\nCity Functions: \n");
