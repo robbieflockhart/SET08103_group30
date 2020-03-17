@@ -126,7 +126,7 @@ public class Application
 
         // Europe
         System.out.println("\n\nPopulation of cities in Europe: \n");
-       df.displayCity(cityEurope);
+        df.displayCity(cityEurope);
 
         // Oceania
         System.out.println("\n\nPopulation of cities in Oceania: \n");
