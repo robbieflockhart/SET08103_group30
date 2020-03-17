@@ -302,7 +302,7 @@ public class CountryFunctions {
         }
     }
 
-    public ArrayList<Country> getContUserInput(Connection con, int numberCap)
+    public ArrayList<Country> getContUserInput(Connection con, int userLimit)
     {
         try {
 
@@ -316,7 +316,8 @@ public class CountryFunctions {
             String strSelect =
                     "SELECT Name, Population, Code, Continent, Region, Capital "
                             + "FROM country "
-                            + "ORDER BY Continent ASC, Population DESC ";
+                            + "ORDER BY Continent ASC, Population DESC "
+                            + "LIMIT " + userLimit + " ";
 
             // Sends the query to the database:
             ResultSet rset = stmt.executeQuery(strSelect);
