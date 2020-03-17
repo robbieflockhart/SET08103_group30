@@ -2,11 +2,7 @@ Product Backlog
 
 First priority
 
-o Create a report that displays the population of people living in cities, and people not living in cities in each continent
-
-o Create a report that displays the population of people living in cities and people not living in cities in each region
-
-o Create a report that displays the population if people living in cities and people not living in cities in each country
+Finished First Priority
 
 Second priority
 
@@ -71,3 +67,10 @@ o Create a report that displays all the capital cities in the world, sorted by t
 o Create a report that displays all the capital cities in the continent, sorted by the largest population to the smallest
 
 o Create a report that displays all the capital cities in the region, sorted by the largest population to the smallest
+
+o Create a report that displays the population of people living in cities, and people not living in cities in each continent
+
+o Create a report that displays the population of people living in cities and people not living in cities in each region
+
+o Create a report that displays the population if people living in cities and people not living in cities in each country
+
