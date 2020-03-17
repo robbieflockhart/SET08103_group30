@@ -335,6 +335,39 @@ public class CountryFunctions {
         }
     }
 
+    public ArrayList<Country> getRegionUserInput(Connection con, int userLimit)
+    {
+        try {
+
+            // Create an SQL statement
+            Statement stmt = con.createStatement();
+
+            // Creates an array list to store the data
+            ArrayList<Country> output = new ArrayList<>();
+
+            // Creates an SQL statement, stored as a STRING.
+            String strSelect =
+                    "SELECT Name, Population, Code, Continent, Region, Capital "
+                            + "FROM country "
+                            + "ORDER BY Region ASC, Population DESC "
+                            + "LIMIT " + userLimit + " ";
+
+            // Sends the query to the database:
+            ResultSet rset = stmt.executeQuery(strSelect);
+
+            // Indicates which columns on the database align to which attributes within "country".
+            SaveToArray(output, rset);
+            // Returns the ArrayList.
+            return output;
+        }
+        catch (Exception e)
+        {
+            System.out.println(e.getMessage());
+            System.out.println("Failed to get information from database (Asia); check connection?");
+            return null;
+        }
+    }
+
     public ArrayList<Country> SaveToArray (ArrayList<Country> output, ResultSet rset){
         try {
 
