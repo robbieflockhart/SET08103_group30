@@ -295,6 +295,36 @@ public class CapitalCityFunctions {
         }
     }
 
+    public ArrayList<CapitalCity> getContUserInput(Connection con, int userLimit) {
+        try {
+
+            // Create an SQL statement
+            Statement stmt = con.createStatement();
+
+            // Creates an array list to store the data
+            ArrayList<CapitalCity> output = new ArrayList<>();
+
+            // Creates an SQL statement, stored as a STRING.
+            String strSelect =
+                    "SELECT city.Name, country.Name, city.Population "
+                            + "FROM city JOIN country ON CountryCode=code "
+                            + "ORDER BY country.Continent ASC, Population DESC "
+                            + "LIMIT " + userLimit + " ";
+
+            // Sends the query to the database:
+            ResultSet rset = stmt.executeQuery(strSelect);
+
+            // Indicates which columns on the database align to which attributes within "country".
+            SaveToArray(output, rset);
+            // Returns the ArrayList.
+            return output;
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+            System.out.println("Failed to get information from database (City); check connection?");
+            return null;
+        }
+    }
+
     public ArrayList<CapitalCity> SaveToArray (ArrayList<CapitalCity> output, ResultSet rset){
         try {
 
