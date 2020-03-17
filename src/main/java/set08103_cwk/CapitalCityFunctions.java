@@ -295,7 +295,7 @@ public class CapitalCityFunctions {
         }
     }
 
-    public ArrayList<CapitalCity> getContUserInput(Connection con, int userLimit) {
+    public ArrayList<CapitalCity> getCapCityByContUserInput(Connection con, int userLimit) {
         try {
 
             // Create an SQL statement
